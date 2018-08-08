@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as SessionAPI from './util/session_api_util';
 import configureStore from './store/store';
+import Root from './components/root';
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -11,5 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   
 
-  ReactDOM.render(<h1>Welcome to Constructables</h1>, root);
+  ReactDOM.render(<Root store={store} />, root);
 });
