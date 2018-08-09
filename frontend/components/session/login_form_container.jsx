@@ -1,9 +1,9 @@
-import { connect } from 'recat-redux';
+import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
-import sessionForm from './session_form';
+import SessionForm from './session_form';
 
 const mapStateToProps = (state, ownProps) => ({
-  errors: [...state.errors],
+  errors: state.errors.session,
   formType: 'login',
 });
 
@@ -11,5 +11,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: (user) => dispatch(login(user)), 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(sessionForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
 
