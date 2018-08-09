@@ -21,8 +21,8 @@ class Profile extends React.Component {
     );
     const noUser = () => (
       <div>
-        <Link to="/signup">Login</Link>
-        <Link to="/login">Sign Up</Link> 
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Sign Up</Link> 
       </div>
     );
 

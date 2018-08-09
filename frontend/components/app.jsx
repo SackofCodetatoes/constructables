@@ -11,6 +11,7 @@ const App = () =>(
       <NavBar/>
     </header>
     <Route exact path="/login" component={LoginFormContainer} />
+    <Route exact path="/signup" component={SignupFormContainer} />
   </div>
 );
 

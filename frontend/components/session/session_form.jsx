@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('we did a submit!');
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
@@ -26,7 +27,7 @@ class SessionForm extends React.Component {
     );
     return (
       <div>
-        <form onSubmit={ this.handleSumbit }>
+        <form onSubmit={this.handleSubmit }>
           { this.props.formType === 'login' ? displayLogin() : displaySignup() }
           
           <input type="submit" value="Do Something"/>
