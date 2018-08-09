@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 class Profile extends React.Component { 
   componentDidMount() {
     this.props.currentUser
+
   };
 
   render() {
@@ -14,6 +15,7 @@ class Profile extends React.Component {
           <img width={'64px'}
             src={"https://i.kym-cdn.com/entries/icons/original/000/000/142/feelsgoodman.png"}
           />
+          <button onClick={() => logout()}>Logout</button>
          </label>
       </div>
     );
