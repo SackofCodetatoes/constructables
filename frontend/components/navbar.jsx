@@ -6,7 +6,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <nav>
+      <nav className="navbar">
         <h1>Constructables</h1>
         <ProfileContainer />
       </nav>

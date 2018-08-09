@@ -1,6 +1,19 @@
-.profile-container {
-  border: 1px solid black;
+.navbar {
+  height: 79px;
+  background-color: #eee;
+  margin: 0;
+  top: 0;
+  left: 0;
 }
-.login {
-  font-weight: 700;
+.navbar > h1{
+  width: 193px;
+  height: 72px;
+  float: left;
+}
+.profile-container {
+  float: right;
+}
+
+.session-link {
+
 }
