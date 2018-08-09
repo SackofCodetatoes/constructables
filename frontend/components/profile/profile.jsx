@@ -12,7 +12,7 @@ class Profile extends React.Component {
     const greetUser = () => (
       <div>
         <label>{currentUser.username}
-          <img width={'64px'}
+          <img className="profile-logo" width={'64px'}
             src={"https://i.kym-cdn.com/entries/icons/original/000/000/142/feelsgoodman.png"}
           />
           <button onClick={() => logout()}>Logout</button>
@@ -20,8 +20,8 @@ class Profile extends React.Component {
       </div>
     );
     const noUser = () => (
-      <div>
-        <Link to="/login">Login</Link>
+      <div className="profile-container">
+        <Link className="login" to="/login">Login</Link>
         <Link to="/signup">Sign Up</Link> 
       </div>
     );
