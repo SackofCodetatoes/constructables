@@ -12,6 +12,12 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     console.log('we did a submit!');
@@ -19,12 +25,25 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
   render() {
+    
     const displayLogin = () => (
-      <h1>Login</h1>
+      <div>
+        <h1>Login</h1>
+        <input type="text" onChange={this.update('username')} value={this.state.username} placeholder="Username" />
+        <input type="password" onChange={this.update('password')} value={this.state.password} placeholder="Password" />
+      </div>
     );
+    
     const displaySignup = () => (
-      <h1>Sign Me Up!</h1>
+      <div>
+        <h1>Sign Me Up!</h1>
+        <input type="text" onChange={this.update('email')} value={this.state.email} placeholder="Email" />
+        <input type="text" onChange={this.update('username')} value={this.state.username} placeholder="Username" />
+        <input type="password" onChange={this.update('password')} value={this.state.password} placeholder="Password" />
+        <input type="text" onChange={this.update('age')} value={this.state.age} placeholder="Age (dd/mm/yyyy)" />
+      </div>
     );
+
     return (
       <div>
         <form onSubmit={this.handleSubmit }>
