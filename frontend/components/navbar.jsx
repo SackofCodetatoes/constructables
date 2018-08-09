@@ -7,8 +7,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <nav className="navbar">
-        <h1>Constructables</h1>
+        <img className="logo" src={window.logoUrl} />
         <ProfileContainer />
+
       </nav>
     );
   }

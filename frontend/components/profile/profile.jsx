@@ -6,11 +6,11 @@ class Profile extends React.Component {
     this.props.currentUser
 
   };
-
+  
   render() {
     const { currentUser, logout } = this.props;
     const greetUser = () => (
-      <div className="profile">
+      <div className="profile-container">
         <label>{currentUser.username}
           <img className="profile-logo" width={'64px'}
             src={"https://i.kym-cdn.com/entries/icons/original/000/000/142/feelsgoodman.png"}

@@ -1,19 +1,39 @@
 .navbar {
-  height: 79px;
+  height: 78px;
+  width: 100%;
+  position: relative;
   background-color: #eee;
   margin: 0;
   top: 0;
   left: 0;
+  border-bottom: 1px solid #ddd;
 }
 .navbar > h1{
   width: 193px;
   height: 72px;
   float: left;
 }
+.logo {
+  position: absolute;
+  left: 28px;
+  bottom: -3px;
+  width: 193px;
+  height: 72px;
+}
 .profile-container {
   float: right;
+  position: absolute;
+  right: 74px;
+  top: 33px;
 }
-
+.spacer {
+  position: relative;
+  background: #ffff;
+  display: inline-block;
+  min-height: 34px;
+  width: 100%;
+  box-shadow: 0 2px 2px -2px gray;
+}
 .session-link {
-
+  
 }
