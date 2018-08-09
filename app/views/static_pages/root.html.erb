@@ -1,1 +1,15 @@
-<main id='root'><img width=32px src="https://i.kym-cdn.com/photos/images/facebook/001/290/942/c31.png">Something went incredibly wrong<img width=32px src="https://i.kym-cdn.com/photos/images/facebook/001/290/942/c31.png"> </main>
+
+<% if logged_in? %>
+  <script type="text/javascript">
+    window.currentUser = <%= render(
+      "api/users/user.json.jbuilder",
+      user: current_user
+      ).html_safe %> 
+  </script>
+<% end %>
+
+<main id='root'>
+  <img width=32px src="https://i.kym-cdn.com/photos/images/facebook/001/290/942/c31.png">
+  Something went incredibly wrong
+  <img width=32px src="https://i.kym-cdn.com/photos/images/facebook/001/290/942/c31.png">
+</main>

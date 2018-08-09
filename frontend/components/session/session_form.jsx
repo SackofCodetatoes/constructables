@@ -23,6 +23,20 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
+// .then(this.props.history.push("/"))
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     
     const displayLogin = () => (
@@ -47,7 +61,7 @@ class SessionForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit }>
           { this.props.formType === 'login' ? displayLogin() : displaySignup() }
-          
+          { this.renderErrors() }
           <input type="submit" value="Do Something"/>
         </form>
       </div>

@@ -6,22 +6,23 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 
 // thunks
+
 export const login = (user) => dispatch => (
-  SessionAPIUtil.login(user).then(user => dispatch(receiveCurrentUser(user),
+  SessionAPIUtil.login(user).then(user => dispatch(receiveCurrentUser(user)),
     error => dispatch(receiveErrors(error))
-  ))
+  )
 );
 
 export const logout = () => dispatch => (
-  SessionAPIUtil.logout().then(() => dispatch(logoutCurrentUser(), 
+  SessionAPIUtil.logout().then(() => dispatch(logoutCurrentUser()), 
     error => dispatch(receiveErrors(error))
-  ))
+  )
 );
 
 export const signup = (user) => dispatch => (
-  SessionAPIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user),
+  SessionAPIUtil.signup(user).then(user => dispatch(receiveCurrentUser(user)),
     error => dispatch(receiveErrors(error))
-  ))
+  )
 );
 
 const receiveCurrentUser = (currentUser) => ({
@@ -34,8 +35,8 @@ const logoutCurrentUser = () => ({
 });
 
 const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
-  errors,
+  type: RECEIVE_SESSION_ERRORS,
+  errors: errors.responseJSON,
 })
 
 // actions
