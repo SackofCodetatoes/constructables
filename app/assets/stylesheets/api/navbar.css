@@ -6,6 +6,9 @@
   margin: 0;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-bottom: 1px solid #ddd;
 }
 .navbar > h1{
@@ -15,25 +18,40 @@
 }
 .logo {
   position: absolute;
-  left: 28px;
+  left: 3%;
   bottom: -3px;
   width: 193px;
   height: 72px;
 }
 .profile-container {
+  /* justify-content: center; */
+  padding: 10px;
   float: right;
   position: absolute;
-  right: 74px;
-  top: 33px;
+  right: 60px;
+  /* top: 33px; */
 }
+
 .spacer {
   position: relative;
   background: #ffff;
   display: inline-block;
   min-height: 34px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   box-shadow: 0 2px 2px -2px gray;
 }
+.profile-container span, .session-link {
+  font-size: 12px;
+  color: #ccc;
+}
 .session-link {
-  
+  color: #777;
+  padding: 2px;
+}
+.motto {
+  position: absolute;
+  right: 60px;
 }

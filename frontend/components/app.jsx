@@ -10,7 +10,7 @@ const App = () =>(
   <div>
     <header>
       <NavBar/>
-      <div className="spacer">Build anything</div>
+      <div className="spacer"> <span className= 'motto'>Build anything</span> </div>
     </header>
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
