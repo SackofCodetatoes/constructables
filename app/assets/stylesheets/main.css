@@ -1,3 +1,6 @@
 * {
   font-family: arial;
 }
+body {
+  background: url("orig.jpg");
+}

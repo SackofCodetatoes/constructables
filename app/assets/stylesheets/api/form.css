@@ -6,11 +6,10 @@
   width: 400px;
   left: 50px;
   height: 1025px;
-  /* border: black 1px solid; */
+  opacity: 0.9;
+
 }
-.form-container:before {
-  opacity: .6;
-}
+
 
 .form-container > form {
   position: relative;
