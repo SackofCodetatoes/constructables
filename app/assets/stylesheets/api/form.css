@@ -8,6 +8,9 @@
   height: 1025px;
   /* border: black 1px solid; */
 }
+.form-container:before {
+  opacity: .6;
+}
 
 .form-container > form {
   position: relative;

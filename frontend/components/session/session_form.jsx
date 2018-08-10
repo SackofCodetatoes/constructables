@@ -71,7 +71,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit }>
           { displayForm() }
           { this.renderErrors() }
-          <input className= 'form-submit-button' type="submit" value={buttonText}/>
+          <input className='form-submit-button' type="submit" value={buttonText}/>
         </form>
       </div>
     );
