@@ -19,7 +19,7 @@
   /* border: 5px solid blue; */
   /* background-attachment: fixed; */
   width: 400px;
-  background: url("orig.jpg") fixed;
+  background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
 
   overflow: hidden;
 }

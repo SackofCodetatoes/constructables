@@ -2,9 +2,10 @@
   font-family: arial;
 }
 body {
-  background: url("orig.jpg") fixed;
+  background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
   background-size: cover;
   background-attachment: fixed;
+  min-height: 1000px;
 }
 
 .clickable:hover {
@@ -12,6 +13,7 @@ body {
 }
 
 .content-spacer {
+ /* min-height: 500px; */
  
 }
 
