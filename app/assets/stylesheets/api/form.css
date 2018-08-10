@@ -79,3 +79,8 @@
 .form-submit-button:focus {
   outline: none;
 }
+
+.drop-down-select {
+  width: 179px;
+  color: gray;
+}

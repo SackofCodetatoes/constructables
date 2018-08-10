@@ -52,6 +52,12 @@ class SessionForm extends React.Component {
         <input className='short-session-field form-field' type="text" onChange={this.update('username')} value={this.state.username} placeholder="Username" />
         <input className='short-session-field form-field' type="password" onChange={this.update('password')} value={this.state.password} placeholder="Password" /><br />
         <input className='short-session-field form-field' type="text" onChange={this.update('age')} value={this.state.age} placeholder="Age (dd/mm/yyyy)" />
+        <select className='short-session-field form-field drop-down-select'>
+          <option disabled selected value="">About you</option>
+          <option value="">Constructor</option>
+          <option value="">Dinosaur</option>
+          <option value="">Good Question</option>
+        </select>
       </div>
     );
 
