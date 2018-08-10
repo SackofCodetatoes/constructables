@@ -2,27 +2,43 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  background-color: rgb(88, 88, 88);
+  
   width: 400px;
   left: 50px;
   height: 1025px;
-  opacity: 0.9;
+  /* opacity: 0.9; */
+}
 
+.backdrop {
+  position: absolute;
+  background-color: rgb(88, 88, 88);
+  /* z-index: ; */
+  height: 1025px;
+  width: 400px;
+  opacity: .9;
 }
 
 
 .form-container > form {
-  position: relative;
+  margin-left: 4px;
+  position: absolute;
   top: 97px;
   text-align: center;
 }
-.session-field {
+.session-field, .short-session-field {
   padding: 10px;
   width: 355px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: #ccc;
+  /* color: #ccc; */
 }
+.short-session-field {
+  width: 120px;
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 160px;
+}
+
 .form-submit-button {
   padding: 10px;
   width: 377px;
@@ -33,12 +49,12 @@
   background-color: #df6902;
 
 }
-.session-field, .form-submit-button {
+.session-field, .form-submit-button, .short-session-field {
   margin-top: 9px;
   margin-bottom: 9px;
 }
 
-.session-field:focus {
+.session-field:focus, .short-session-field:focus {
   outline: none;
   box-shadow: 0 0 1px rgb(77, 144, 254);
   border: 1px rgb(77, 144, 254) solid;

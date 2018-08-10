@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="speech-bubble" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -48,11 +48,10 @@ class SessionForm extends React.Component {
     
     const displaySignup = () => (
       <div>
-        <h1>Sign Me Up!</h1>
-        <input className='text-field' type="text" onChange={this.update('email')} value={this.state.email} placeholder="Email" />
-        <input type="text" onChange={this.update('username')} value={this.state.username} placeholder="Username" />
-        <input type="password" onChange={this.update('password')} value={this.state.password} placeholder="Password" />
-        <input type="text" onChange={this.update('age')} value={this.state.age} placeholder="Age (dd/mm/yyyy)" />
+        <input className='session-field form-field' type="email" onChange={this.update('email')} value={this.state.email} placeholder="Email" /><br/>
+        <input className='short-session-field form-field' type="text" onChange={this.update('username')} value={this.state.username} placeholder="Username" />
+        <input className='short-session-field form-field' type="password" onChange={this.update('password')} value={this.state.password} placeholder="Password" /><br />
+        <input className='short-session-field form-field' type="text" onChange={this.update('age')} value={this.state.age} placeholder="Age (dd/mm/yyyy)" />
       </div>
     );
 
@@ -68,6 +67,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className='form-container'>
+        <div className="backdrop"></div>
         <form onSubmit={this.handleSubmit }>
           { displayForm() }
           { this.renderErrors() }
