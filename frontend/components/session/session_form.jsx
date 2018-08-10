@@ -73,6 +73,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className='form-container'>
+        <div className="blur-area"></div>
         <div className="backdrop"></div>
         <form onSubmit={this.handleSubmit }>
           { displayForm() }

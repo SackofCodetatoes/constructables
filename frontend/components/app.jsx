@@ -12,7 +12,7 @@ const App = () =>(
       <NavBar/>
       <div className="spacer"> <span className= 'motto'>Build anything</span> </div>
     </header>
-    
+    {/* <div className="blur-area"></div> */}
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
 

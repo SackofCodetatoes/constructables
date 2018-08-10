@@ -2,7 +2,9 @@
   font-family: arial;
 }
 body {
-  background: url("orig.jpg");
+  background: url("orig.jpg") fixed;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .clickable:hover {

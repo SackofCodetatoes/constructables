@@ -2,30 +2,51 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  
+  background: cover;
   width: 400px;
   left: 50px;
   height: 1025px;
+  /* -webkit-filter: blur(5px);
+  filter: blur(5px); */
   /* opacity: 0.9; */
+  /* background: inherit; */
+}
+.blur-area {
+  /* left: 50px; */
+  z-index: -1;
+  height: 1040px;
+  position: absolute;
+  /* border: 5px solid blue; */
+  /* background-attachment: fixed; */
+  width: 400px;
+  background: url("orig.jpg") fixed;
+
+  overflow: hidden;
+}
+.blur-area {
+  filter: blur(10px);
 }
 
 .backdrop {
   position: absolute;
-  background-color: rgb(88, 88, 88);
+
+  background-color: rgba(34, 34, 34, .25);
   /* z-index: ; */
   height: 1025px;
   width: 400px;
-  opacity: .9;
+  /* opacity: .9; */
 }
+
+
 .simple-error {
   border: 1px solid #c55b00;
   padding-top: 3px;
   padding-bottom: 3px;
   background-color: red;
   color: white;
-
-
-
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
