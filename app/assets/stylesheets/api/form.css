@@ -6,18 +6,12 @@
   width: 400px;
   left: 50px;
   height: 1025px;
-  /* -webkit-filter: blur(5px);
-  filter: blur(5px); */
-  /* opacity: 0.9; */
-  /* background: inherit; */
 }
 .blur-area {
   /* left: 50px; */
   z-index: -1;
   height: 1040px;
   position: absolute;
-  /* border: 5px solid blue; */
-  /* background-attachment: fixed; */
   width: 400px;
   background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
 
