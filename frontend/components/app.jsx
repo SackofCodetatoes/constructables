@@ -12,6 +12,8 @@ const App = () =>(
       <NavBar/>
       <div className="spacer"> <span className= 'motto'>Build anything</span> </div>
     </header>
+
+    <footer>Foot</footer>
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
   </div>

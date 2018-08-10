@@ -18,26 +18,48 @@
   display: none;
 
 }
-
-.profile-icon:focus + .profile-menu {
+.profile-name {
+  margin-left: 20px;
+  position: absolute;
+  margin-top: 20px;
+  width: 130px;
+}
+.profile-icon:focus+.profile-menu, .profile-menu:hover {
   display: block;
   position: fixed;
   z-index: 4;
-  background-color: white;
+  background-color:#fff;
   z-index: 4;
   width: 328px;
   height: 255px;
   right: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: #ccc 0px 3px 3px;
 }
 
-.logout-button {
+.logout-button { 
+  /* display: inline; */
   background-color: #eee;
   border: 1px solid #ccc;
   border-radius: 5px;
   float: right;
-  right: 5px;
-  top: 5px;
-
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 5px 10px 5px 10px;
+  width: 88px;
+  height: 30px;
 }
-
+.profile-new-project {
+  position: absolute;
+  bottom: 19px;
+  left: 20px;
+  width: 293px;
+  border: 1px #c55b00 solid;
+  border-radius: 5px;
+  background-color: #df6902;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
 
