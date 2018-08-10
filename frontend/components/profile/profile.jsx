@@ -6,19 +6,25 @@ class Profile extends React.Component {
     this.props.currentUser
 
   };
-  
+  //comment
   render() {
     const { currentUser, logout } = this.props;
     const greetUser = () => (
       <div className="profile-container">
-        <label>{currentUser.username}
-          <img className="profile-logo" width={'64px'}
+        <button className="profile-icon clickable">
+          <img
             src={"https://i.kym-cdn.com/entries/icons/original/000/000/142/feelsgoodman.png"}
           />
-        </label>
-        <button onClick={() => logout()}>Logout</button>
-      </div>
+        </button>
+        <div className="profile-menu">
+          {currentUser.username} 
+          <button className="logout-button" onClick={() => logout()}>Logout</button></div>
+        </div>
     );
+
+
+
+
     const noUser = () => (
       <div className="profile-container">
         <Link className="session-link" to="/login">Login</Link><span>   |   </span><Link className="session-link" to="/signup">Sign Up</Link> 

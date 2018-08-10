@@ -4,3 +4,11 @@
 body {
   background: url("orig.jpg");
 }
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+/* .hidden {
+  display: none;
+} */

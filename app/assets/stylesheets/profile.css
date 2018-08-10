@@ -1,0 +1,43 @@
+.profile-icon {
+  border: 1px solid #ccc;
+  width: 34px;
+  height: 34px;
+  border-radius: 50px;
+  overflow: hidden;
+  display: flex;
+  right: 0;
+  outline: none;
+  background-size: cover;
+}
+.profile-icon img {
+  position: relative;
+  width: 100%;
+  margin: auto auto;
+}
+.profile-menu {
+  display: none;
+
+}
+
+.profile-icon:focus + .profile-menu {
+  display: block;
+  position: fixed;
+  z-index: 4;
+  background-color: white;
+  z-index: 4;
+  width: 328px;
+  height: 255px;
+  right: 25px;
+}
+
+.logout-button {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  float: right;
+  right: 5px;
+  top: 5px;
+
+}
+
+

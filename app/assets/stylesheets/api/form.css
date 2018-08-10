@@ -17,6 +17,16 @@
   width: 400px;
   opacity: .9;
 }
+.simple-error {
+  border: 1px solid #c55b00;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: red;
+  color: white;
+
+
+
+}
 
 
 .form-container > form {
@@ -32,11 +42,15 @@
   border-radius: 5px;
   /* color: #ccc; */
 }
+
 .short-session-field {
-  width: 120px;
   margin-left: 7px;
   margin-right: 7px;
   width: 160px;
+}
+.session-field {
+  margin-left: 7px;
+  margin-right: 7px;
 }
 
 .form-submit-button {

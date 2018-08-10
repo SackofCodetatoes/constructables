@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li className="speech-bubble" key={`error-${i}`}>
+          <li className="simple-error" key={`error-${i}`}>
             {error}
           </li>
         ))}
