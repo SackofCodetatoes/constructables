@@ -1,5 +1,5 @@
 .form-container {
-  display flex;
+  display: flex;
   position: relative;
   flex-direction: row;
   background-color: rgb(88, 88, 88);
