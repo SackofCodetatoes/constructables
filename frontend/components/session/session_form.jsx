@@ -10,12 +10,19 @@ class SessionForm extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const user = {username: "username", password: "password"};
+    this.props.processForm(user);
   }
 
   handleSubmit(e) {
@@ -75,10 +82,11 @@ class SessionForm extends React.Component {
       <div className='form-container'>
         <div className="blur-area"></div>
         <div className="backdrop"></div>
-        <form onSubmit={this.handleSubmit }>
+        <form >
           { displayForm() }
           { this.renderErrors() }
-          <input className='form-submit-button' type="submit" value={buttonText}/>
+          <input className='form-submit-button' type="submit" onClick={this.handleSubmit} value={buttonText}/>
+          <input className='form-submit-button' type="submit" onClick={this.demoLogin} value="Demo Login" />
         </form>
       </div>
     );
