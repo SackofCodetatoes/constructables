@@ -3,9 +3,11 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
+    @projects = Project.all
   end
 
   def show
+    @project = Project.find(params[:id])
   end
 
   def new
@@ -19,4 +21,9 @@ class Api::ProjectsController < ApplicationController
 
   def destroy
   end
+  private
+    def project_params
+      params.require('project'.permit(:title, :user_id, :description))
+    end
 end
+
