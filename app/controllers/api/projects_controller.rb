@@ -20,6 +20,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def destroy
+    @project = Project.find(params[:id])
   end
   private
     def project_params
