@@ -10,12 +10,19 @@ class SessionForm extends React.Component {
       password: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const user = {username: "username", password: "password"};
+    this.props.processForm(user);
   }
 
   handleSubmit(e) {
@@ -29,7 +36,7 @@ class SessionForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="simple-error" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -48,11 +55,16 @@ class SessionForm extends React.Component {
     
     const displaySignup = () => (
       <div>
-        <h1>Sign Me Up!</h1>
-        <input className='text-field' type="text" onChange={this.update('email')} value={this.state.email} placeholder="Email" />
-        <input type="text" onChange={this.update('username')} value={this.state.username} placeholder="Username" />
-        <input type="password" onChange={this.update('password')} value={this.state.password} placeholder="Password" />
-        <input type="text" onChange={this.update('age')} value={this.state.age} placeholder="Age (dd/mm/yyyy)" />
+        <input className='session-field form-field' type="email" onChange={this.update('email')} value={this.state.email} placeholder="Email" /><br/>
+        <input className='short-session-field form-field' type="text" onChange={this.update('username')} value={this.state.username} placeholder="Username" />
+        <input className='short-session-field form-field' type="password" onChange={this.update('password')} value={this.state.password} placeholder="Password" /><br />
+        <input className='short-session-field form-field' type="text" onChange={this.update('age')} value={this.state.age} placeholder="Age (dd/mm/yyyy)" />
+        <select className='short-session-field form-field drop-down-select'>
+          <option disabled selected value="">About you</option>
+          <option value="">Constructor</option>
+          <option value="">Dinosaur</option>
+          <option value="">Good Question</option>
+        </select>
       </div>
     );
 
@@ -68,10 +80,13 @@ class SessionForm extends React.Component {
 
     return (
       <div className='form-container'>
-        <form onSubmit={this.handleSubmit }>
+        <div className="blur-area"></div>
+        <div className="backdrop"></div>
+        <form >
           { displayForm() }
           { this.renderErrors() }
-          <input className='form-submit-button' type="submit" value={buttonText}/>
+          <input className='form-submit-button' type="submit" onClick={this.handleSubmit} value={buttonText}/>
+          <input className='form-submit-button' type="submit" onClick={this.demoLogin} value="Demo Login" />
         </form>
       </div>
     );

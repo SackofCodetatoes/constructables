@@ -2,5 +2,30 @@
   font-family: arial;
 }
 body {
-  background: url("orig.jpg");
+  background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 1000px;
 }
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.content-spacer {
+ /* min-height: 500px; */
+ 
+}
+
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 279px;
+  background-color: gray;
+}
+
+/* .hidden {
+  display: none;
+} */

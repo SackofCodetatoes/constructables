@@ -1,28 +1,73 @@
 .form-container {
-  display flex;
+  display: flex;
   position: relative;
   flex-direction: row;
-  background-color: rgb(88, 88, 88);
+  background: cover;
   width: 400px;
   left: 50px;
   height: 1025px;
-  opacity: 0.9;
+}
+.blur-area {
+  /* left: 50px; */
+  z-index: -1;
+  height: 1040px;
+  position: absolute;
+  width: 400px;
+  background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
 
+  overflow: hidden;
+}
+.blur-area {
+  filter: blur(10px);
+}
+
+.backdrop {
+  position: absolute;
+
+  background-color: rgba(34, 34, 34, .25);
+  /* z-index: ; */
+  height: 1025px;
+  width: 400px;
+  /* opacity: .9; */
+}
+
+
+.simple-error {
+  border: 1px solid #c55b00;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 
 .form-container > form {
-  position: relative;
+  margin-left: 4px;
+  position: absolute;
   top: 97px;
   text-align: center;
 }
-.session-field {
+.session-field, .short-session-field {
   padding: 10px;
   width: 355px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: #ccc;
+  /* color: #ccc; */
 }
+
+.short-session-field {
+  margin-left: 7px;
+  margin-right: 7px;
+  width: 160px;
+}
+.session-field {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
 .form-submit-button {
   padding: 10px;
   width: 377px;
@@ -33,12 +78,12 @@
   background-color: #df6902;
 
 }
-.session-field, .form-submit-button {
+.session-field, .form-submit-button, .short-session-field {
   margin-top: 9px;
   margin-bottom: 9px;
 }
 
-.session-field:focus {
+.session-field:focus, .short-session-field:focus {
   outline: none;
   box-shadow: 0 0 1px rgb(77, 144, 254);
   border: 1px rgb(77, 144, 254) solid;
@@ -48,4 +93,9 @@
 }
 .form-submit-button:focus {
   outline: none;
+}
+
+.drop-down-select {
+  width: 179px;
+  color: gray;
 }

@@ -9,6 +9,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  age             :string           not null
 #
 
 class User < ApplicationRecord
@@ -16,7 +17,8 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  # has_many :projects
+    # has_one_attached :icon
+  has_many :projects
   # has_many :comments
 
   after_initialize :ensure_session_token
