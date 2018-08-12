@@ -1,4 +1,4 @@
-class ProjectController < ApplicationController
+class Api::ProjectsController < ApplicationController
   def create
   end
 
