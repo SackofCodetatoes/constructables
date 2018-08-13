@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :username, :email, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-    # has_one_attached :icon
+  # has_one_attached :icon
   has_many :projects
   # has_many :comments
 
