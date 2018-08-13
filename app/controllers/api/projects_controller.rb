@@ -3,10 +3,12 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       render "api/projects/show"
+    end
   end
 
   def index
     @projects = Project.all
+    
   end
 
   def show
