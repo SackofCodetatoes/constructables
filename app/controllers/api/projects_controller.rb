@@ -8,7 +8,6 @@ class Api::ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
-    
   end
 
   def show
@@ -26,6 +25,9 @@ class Api::ProjectsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:id])
+    if @project.destroy
+      render :show
+    end
   end
   private
     def project_params

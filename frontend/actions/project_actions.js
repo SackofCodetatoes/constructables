@@ -12,7 +12,7 @@ export const fetchProject = (projectId) => dispatch => (
   ProjectAPIUtil.fetchProject(projectId).then(project => dispatch(receiveProject(project)))
 );
 export const deleteProject = (projectId) => dispatch => (
-  ProjectAPIUtil.deleteProject(projectId).then(id => dispatch(removeProject(id)))
+  ProjectAPIUtil.deleteProject(projectId).then(project => dispatch(removeProject(projectId)))
 );
 
 
