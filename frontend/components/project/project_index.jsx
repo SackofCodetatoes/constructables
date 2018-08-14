@@ -21,7 +21,7 @@ class ProjectIndex extends React.Component {
     // console.log(this.props);
 
     
-    console.log(users);
+    // console.log(users);
     let projects = this.props.projects.map(
       project => (
         <div className='project-item-box' key={project.id}>
@@ -30,6 +30,7 @@ class ProjectIndex extends React.Component {
             projectId={project.id}
             author={users[project.user_id] ? users[project.user_id].username : 'loading..'}
             title={project.title}
+            authorId={project.user_id}
           />
         </div>
        )

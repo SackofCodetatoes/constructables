@@ -1,18 +1,21 @@
 .project-index {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .project-index-grid {
-  width: 85%;
+  width: 95%;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   /* flex-direction: row;  */
 }
 .project-item-box {
   border: 1px solid #eee;
-  width: 320px;
+  min-width: 300px;
   height: 362px;
-  margin: 13px;
+  margin: 10px;
 }
 .project-item-box:hover {
   border: 1px solid #ccc
