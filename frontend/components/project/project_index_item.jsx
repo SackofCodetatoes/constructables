@@ -6,9 +6,7 @@ class ProjectIndexItem extends React.Component {
   render() {
     return (
       <li>
-        <Link to={`api/projects/${this.props.id}`}>
-          {this.props.title} by {this.props.author}
-        </Link>
+        {this.props.title} by {this.props.author}
       </li>);
   }
 } 

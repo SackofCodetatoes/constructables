@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectIndexItem from './project_index_item';
+import { Link } from 'react-router-dom';
 
 class ProjectIndex extends React.Component {
   
@@ -13,12 +14,14 @@ class ProjectIndex extends React.Component {
     // console.log(this.props.users[''])
     let projects = this.props.projects.map(
       project => (
-      <ProjectIndexItem 
-        key={project.id}
-        id={project.id}
-        author={this.props.users[project.user_id].username}
-        title={project.title}
-        />));
+        <Link to={`/api/projects/${project.id}`}>
+          <ProjectIndexItem
+            key={project.id}
+            author={this.props.users[project.user_id].username}
+            title={project.title}
+          />
+        </Link>
+     ));
     return (<div>{projects}</div>);
   }
 
