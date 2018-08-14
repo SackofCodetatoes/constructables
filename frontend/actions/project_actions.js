@@ -16,13 +16,13 @@ export const deleteProject = (projectId) => dispatch => (
 );
 
 
-const receiveAllProjects = (projects) => ({
+const receiveAllProjects = (payload) => ({
   type: RECEIVE_ALL_PROJECTS,
-  projects
+  payload
 });
-const receiveProject = (project) => ({
+const receiveProject = (payload) => ({
   type: RECEIVE_PROJECT,
-  project
+  payload
 });
 const removeProject = (projectId) => ({
   type: REMOVE_PROJECT,
