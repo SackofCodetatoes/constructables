@@ -4,11 +4,6 @@ class ProjectShow extends React.Component {
   componentDidMount(){
     this.props.fetchProject(this.props.match.params.projectId);
   }
-  componentWillReceiveProps(nextProps){
-    if(this.props.project.id = nextProps.match.params.projectId) {
-      this.props.fetchProject(nextProps.match.params.projectId);
-    }
-  }
 
   render() {
     console.log('props');
@@ -20,8 +15,8 @@ class ProjectShow extends React.Component {
     return (
       <div>
         <ul>
-          <li>{project.title}</li>
-          <li>{project.description}</li>
+          <li>Title: {project.title}</li>
+          <li>Description: {project.description}</li>
         </ul>
       </div>
     )

@@ -1,18 +1,26 @@
+.form-page {
+  background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -3;
+
+}
 .form-container {
   display: flex;
   position: relative;
   flex-direction: row;
-  background: cover;
+  /* background: cover; */
   width: 400px;
   left: 50px;
   height: 1025px;
 }
 .blur-area {
   /* left: 50px; */
-  z-index: -1;
-  height: 1040px;
+  /* z-index: -1; */
+  height: 1020px;
   position: absolute;
   width: 400px;
+  /* background: inherit; */
   background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
 
   overflow: hidden;

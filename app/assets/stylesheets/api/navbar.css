@@ -24,6 +24,29 @@
   height: 72px;
   z-index: 2;
 }
+.projects-button {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  border-radius: 5px; 
+  /* color: #777; */
+  position: absolute;
+  left: 30%;
+  padding: 5px 10px 5px 10px;
+  bottom: 30%;
+}
+
+.projects-button:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+.projects-button:active {
+  box-shadow: inset 0 0 10px #ccc;
+}
+
+.projects-button:focus {
+  outline: none;
+}
+
 .profile-container {
   /* justify-content: center; */
   padding: 10px;
@@ -43,6 +66,7 @@
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 2px 2px -2px gray;
+  z-index: 1;
 }
 .profile-container span, .session-link {
   font-size: 12px;

@@ -79,15 +79,18 @@ class SessionForm extends React.Component {
     } 
 
     return (
-      <div className='form-container'>
-        <div className="blur-area"></div>
-        <div className="backdrop"></div>
-        <form >
-          { displayForm() }
-          { this.renderErrors() }
-          <input className='form-submit-button' type="submit" onClick={this.handleSubmit} value={buttonText}/>
-          <input className='form-submit-button' type="submit" onClick={this.demoLogin} value="Demo Login" />
-        </form>
+      <div className='form-page'>
+
+        <div className='form-container'>
+          <div className="blur-area"></div>
+          <div className="backdrop"></div>
+          <form >
+            { displayForm() }
+            { this.renderErrors() }
+            <input className='form-submit-button' type="submit" onClick={this.handleSubmit} value={buttonText}/>
+            <input className='form-submit-button' type="submit" onClick={this.demoLogin} value="Demo Login" />
+          </form>
+        </div>
       </div>
     );
   }

@@ -20,9 +20,9 @@ const receiveAllProjects = (payload) => ({
   type: RECEIVE_ALL_PROJECTS,
   payload
 });
-const receiveProject = (payload) => ({
+const receiveProject = (project) => ({
   type: RECEIVE_PROJECT,
-  payload
+  project
 });
 const removeProject = (projectId) => ({
   type: REMOVE_PROJECT,

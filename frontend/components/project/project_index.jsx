@@ -12,7 +12,7 @@ class ProjectIndex extends React.Component {
 
     let projects = this.props.projects.map(
       project => (
-        <Link key={project.id}  to={`/api/projects/${project.id}`}>
+        <Link key={project.id} to={`/api/projects/${project.id}`}>
           <ProjectIndexItem
             key={project.id}
             author={this.props.users[project.user_id].username}
@@ -20,6 +20,9 @@ class ProjectIndex extends React.Component {
           />
         </Link>
      ));
+    if(!this.props.users){
+      return (<div>Loading...</div>)
+    }
     return (<div>{projects}</div>);
   }
 

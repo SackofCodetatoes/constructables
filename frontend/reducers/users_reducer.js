@@ -9,6 +9,9 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, {[action.currentUser.id]: action.currentUser});
     case RECEIVE_ALL_PROJECTS:
       return merge({}, state, action.payload.users);
+    // case RECEIVE_PROJECT: 
+    //   return merge({}, state, action.payload.user);
+    // go through related files to add payload for receive_project action
     default:
       return state;
   }
