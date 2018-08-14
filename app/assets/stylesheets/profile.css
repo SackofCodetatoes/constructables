@@ -63,4 +63,7 @@
   padding-bottom: 5px;
   color: white;
 }
+.profile-new-project:hover {
+  cursor: pointer;
+}
 

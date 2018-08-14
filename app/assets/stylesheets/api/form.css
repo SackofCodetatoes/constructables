@@ -107,3 +107,9 @@
   width: 179px;
   color: gray;
 }
+
+.other-link {
+  color: #fff;
+  padding-top: 5px;
+  /* text-shadow: 0 0px #ccc; */
+}

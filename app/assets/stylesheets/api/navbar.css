@@ -35,7 +35,7 @@
   bottom: 30%;
 }
 
-.projects-button:hover {
+.projects-button:hover, .logout-button:hover {
   background-color: #e6e6e6;
   cursor: pointer;
 }

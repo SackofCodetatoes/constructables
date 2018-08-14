@@ -25,6 +25,7 @@ export const signup = (user) => dispatch => (
     error => dispatch(receiveErrors(error))
   )
 );
+
 export const clearSessionErrors = () => dispatch => (
   dispatch(removeSessionErrors())
 );

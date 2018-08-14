@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 class SessionForm extends React.Component {
   
   constructor(props) {
@@ -81,7 +81,11 @@ class SessionForm extends React.Component {
       if(this.props.formType === 'login') {
         return (<input className='form-submit-button' type="submit" onClick={this.demoLogin} value="Demo Login" /> )
       } else return null;
-     
+    }
+    const renderOtherLink = () => {
+      if(this.props.formType === 'login'){
+        return (<Link className="other-link" onClick={() => this.props.clearSessionErrors()} to="/signup">Sign Up</Link>)
+      } else return (<Link className="other-link" onClick={() => this.props.clearSessionErrors()} to="/login">Login</Link>)
     }
 
     
@@ -96,6 +100,7 @@ class SessionForm extends React.Component {
             { this.renderErrors() }
             <input className='form-submit-button' type="submit" onClick={this.handleSubmit} value={buttonText}/>
             { renderDemoLogin() }
+            <br/><span className="other-link">or </span>{ renderOtherLink() }
           </form>
         </div>
       </div>
