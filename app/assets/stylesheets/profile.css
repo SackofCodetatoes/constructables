@@ -24,7 +24,7 @@
   margin-top: 20px;
   width: 130px;
 }
-.profile-icon:focus + .profile-menu, .profile-menu:target {
+.profile-icon:focus + .profile-menu, .profile-menu:hover {
   display: block;
   position: fixed;
   z-index: 4;
@@ -50,6 +50,7 @@
   width: 88px;
   height: 30px;
 }
+
 .profile-new-project {
   position: absolute;
   bottom: 19px;

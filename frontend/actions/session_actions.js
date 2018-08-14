@@ -3,6 +3,7 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS'
 
 
 // thunks
@@ -24,6 +25,9 @@ export const signup = (user) => dispatch => (
     error => dispatch(receiveErrors(error))
   )
 );
+export const clearSessionErrors = () => dispatch => (
+  dispatch(removeSessionErrors())
+);
 
 const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -37,7 +41,10 @@ const logoutCurrentUser = () => ({
 const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
   errors: errors.responseJSON,
-})
+});
 
+const removeSessionErrors = () => ({
+  type: CLEAR_SESSION_ERRORS
+});
 // actions
 

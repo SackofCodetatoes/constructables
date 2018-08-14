@@ -39,11 +39,11 @@
   background-color: #e6e6e6;
   cursor: pointer;
 }
-.projects-button:active {
+.projects-button:active, .logout-button:active {
   box-shadow: inset 0 0 10px #ccc;
 }
 
-.projects-button:focus {
+.projects-button:focus, .logout-button:focus {
   outline: none;
 }
 

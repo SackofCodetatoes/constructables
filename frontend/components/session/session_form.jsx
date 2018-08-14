@@ -77,7 +77,14 @@ class SessionForm extends React.Component {
       displayForm = displaySignup;
       buttonText = 'Sign Me Up!';
     } 
+    const renderDemoLogin = () => {
+      if(this.props.formType === 'login') {
+        return (<input className='form-submit-button' type="submit" onClick={this.demoLogin} value="Demo Login" /> )
+      } else return null;
+     
+    }
 
+    
     return (
       <div className='form-page'>
 
@@ -88,7 +95,7 @@ class SessionForm extends React.Component {
             { displayForm() }
             { this.renderErrors() }
             <input className='form-submit-button' type="submit" onClick={this.handleSubmit} value={buttonText}/>
-            <input className='form-submit-button' type="submit" onClick={this.demoLogin} value="Demo Login" />
+            { renderDemoLogin() }
           </form>
         </div>
       </div>
