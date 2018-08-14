@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       store = configureStore();
     }  
-    
+    window.getState = store.getState;
     window.projects = fetchAllProjects;
     window.project = fetchProject;
     window.removeProject = deleteProject;
