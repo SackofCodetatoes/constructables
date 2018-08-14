@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfileContainer from './profile/profile_container';
 import NavBar from './navbar';
+import NavBarContainer from './navbar_container';
 import { Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util'
 import LoginFormContainer from './session/login_form_container';
@@ -12,7 +13,7 @@ import ProjectShowContainer from './project/project_show_container';
 const App = () =>(
   <div>
     <header>
-      <NavBar/>
+      <NavBarContainer />
       <div className="spacer"> <span className= 'motto'>Build anything</span> </div>
     </header>
     

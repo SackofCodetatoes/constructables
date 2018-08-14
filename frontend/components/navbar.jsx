@@ -6,10 +6,11 @@ class NavBar extends React.Component {
 
 
   render() {
+    console.log(this.props);
     return (
       <nav className="navbar">
-        <Link to='/'><img className="logo" src={window.logoUrl} /></Link>
-        <Link className= 'a-link project-button' to='/api/projects/'><button className='projects-button'>Projects</button></Link>
+        <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>
+        <Link className='a-link project-button' to='/api/projects/'><button className='projects-button'>Projects</button></Link>
         <ProfileContainer />
 
       </nav>
