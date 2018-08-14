@@ -23,9 +23,9 @@ const App = () =>(
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/signup" component={SignupFormContainer} />
 
-    <div className="content-spacer"></div>
     <footer className="footer"></footer>
   </div>
 );
 
+{/* <div className="content-spacer"></div> */}
 export default App;
