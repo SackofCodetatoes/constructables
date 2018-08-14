@@ -9,12 +9,10 @@ class ProjectIndex extends React.Component {
   }
   
   render(){
-    console.log('render users');
-    console.log(this.props);
-    // console.log(this.props.users[''])
+
     let projects = this.props.projects.map(
       project => (
-        <Link to={`/api/projects/${project.id}`}>
+        <Link key={project.id}  to={`/api/projects/${project.id}`}>
           <ProjectIndexItem
             key={project.id}
             author={this.props.users[project.user_id].username}
