@@ -3,6 +3,8 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       render "api/projects/show"
+    else 
+      render json: @project.errors.full_messages, status: 422
     end
   end
 

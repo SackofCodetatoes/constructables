@@ -11,5 +11,8 @@
 #  updated_at :datetime         not null
 #
 
-class Api::Step < ApplicationRecord
+class Step < ApplicationRecord
+  validates :project_id, :title, :body, :step_index, presence: true
+  
+  belongs_to :project
 end

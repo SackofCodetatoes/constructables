@@ -51,17 +51,23 @@ class ProjectForm extends React.Component {
     console.log(this.state);
     const project = Object.assign({}, { 
       title: this.state.title, 
-      body: this.state.body,
+      description: this.state.description,
       user_id: this.state.user_id
     });
 
     //resp has payload.project.id
     this.props.processForm(project).then(resp => {
-      // for(let i =0; i< 5; i++){
-      //   console.log(resp.payload.project.id)
-      // }
-    });
-    //.then(this.props.history.push('/api/projects'));
+      for(let i = 0; i < this.state.steps.length; i++){
+        // console.log(resp.payload.project.id)
+        let step = Object.assign({}, {
+          title: this.state.steps[i].title,
+          body: this.state.steps[i].body,
+          step_index: i,
+          project_id: resp.payload.project.id,
+        });
+        this.props.processStep(step);
+      };
+    }).then(this.props.history.push('/api/projects'));
   }
 
   render() {
