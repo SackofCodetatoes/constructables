@@ -6,7 +6,7 @@ class NavBar extends React.Component {
 
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     return (
       <nav className="navbar">
         <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>

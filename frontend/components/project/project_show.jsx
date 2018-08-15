@@ -15,10 +15,10 @@ class ProjectShow extends React.Component {
     const { project } = this.props;
     const { user } = this.props;
 
-    renderProjectDelete = () => {
+    const renderProjectDelete = () => {
       if(this.props.currentUserId === project.user_id ) {
-
-      }
+        return (<button className='project-delete-button'>Delete Project</button>)
+      } else return null;
     }
 
     if(!project || !user) {
@@ -34,6 +34,7 @@ class ProjectShow extends React.Component {
             <li className='project-descripton'>Description: {project.description}</li>
           </ul>
         </div>
+        { renderProjectDelete() }
       </div>
     )
   }
