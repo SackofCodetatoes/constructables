@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: steps
+#
+#  id         :bigint(8)        not null, primary key
+#  project_id :integer          not null
+#  title      :string           not null
+#  body       :string           not null
+#  step_index :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_id: 1
+  title: MyString
+  body: MyString
+  step-index: 1
+
+two:
+  project_id: 1
+  title: MyString
+  body: MyString
+  step-index: 1

@@ -38,7 +38,7 @@ class ProjectForm extends React.Component {
   addStep(e) {
     e.preventDefault();
     let nextSteps = this.state.steps;
-    nextSteps.push({title: '', description: ''});
+    nextSteps.push({title: '', body: ''});
     this.setState({
       steps: nextSteps
     });
@@ -51,7 +51,7 @@ class ProjectForm extends React.Component {
     console.log(this.state);
     const project = Object.assign({}, { 
       title: this.state.title, 
-      description: this.state.description,
+      body: this.state.body,
       user_id: this.state.user_id
     });
 
@@ -72,7 +72,7 @@ class ProjectForm extends React.Component {
          this.state.steps.map((step, index) => 
             <div>
               <input type="text" onChange={this.updateStep(index, 'title')} placeholder='Step: Type your title...' value={step.title}/>
-              <input type="text" onChange={this.updateStep(index, 'description')} placeholder='Type your step description' value={step.description}/>
+              <input type="text" onChange={this.updateStep(index, 'body')} placeholder='Type your step description' value={step.body}/>
             </div>
           )
       );
