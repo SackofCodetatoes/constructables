@@ -9,7 +9,8 @@ const mapStateToProps = ({session, entities:{ users }}) => ({
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  clearSessionErrors: () => dispatch(clearSessionErrors())
+  clearSessionErrors: () => dispatch(clearSessionErrors()),
+  
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

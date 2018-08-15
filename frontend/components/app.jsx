@@ -8,6 +8,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ProjectIndexContainer from './project/project_index_container';
 import ProjectShowContainer from './project/project_show_container';
+import Switch from '../../node_modules/react-router-dom/Switch';
 
 
 const App = () =>(
@@ -18,11 +19,13 @@ const App = () =>(
     </header>
     
    
-    
-    <Route exact path="/api/projects/" component={ProjectIndexContainer} />
-    <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
-    <AuthRoute exact path="/login" component={LoginFormContainer} />
-    <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    <Switch>
+      <Route exact path="/api/projects/" component={ProjectIndexContainer} />
+      <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
+      <Route exact path="/new/project/" component={ProjectNewFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+    </Switch>
 
     <footer className="footer"></footer>
   </div>
