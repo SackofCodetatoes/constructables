@@ -7,15 +7,24 @@ class ProjectShow extends React.Component {
     this.props.fetchProject(this.props.match.params.projectId);
   }
 
+
+
   render() {
     // console.log('props');
     console.log(this.props);
     const { project } = this.props;
     const { user } = this.props;
-    console.log(user);
+
+    renderProjectDelete = () => {
+      if(this.props.currentUserId === project.user_id ) {
+
+      }
+    }
+
     if(!project || !user) {
       return (<div>Uhhh, gimmie a sec...</div>);
     }
+
     return (
       <div className='project-show-page'>
         <div className='project-header'>
