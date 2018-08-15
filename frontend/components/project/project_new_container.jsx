@@ -5,6 +5,7 @@ import ProjectForm from './project_form';
 const mapStateToProps = (state, ownProps) => ({
   errors: state.errors.project,
   formType: 'new',
+  currentUserId: state.session.id
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
