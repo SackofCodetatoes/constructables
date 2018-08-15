@@ -19,7 +19,9 @@ class Profile extends React.Component {
         <div className="profile-menu">
           <label className="profile-name">{currentUser.username}</label> 
           <button className="logout-button" onClick={() => logout()}>Logout</button>
-          <button className="profile-new-project">New Constructable »</button>
+          <Link to='/new/project/'>
+            <button className="profile-new-project">New Constructable »</button>
+          </Link>
         </div>
       </div>
     );

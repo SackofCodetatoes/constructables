@@ -9,9 +9,12 @@ import SignupFormContainer from './session/signup_form_container';
 import ProjectIndexContainer from './project/project_index_container';
 import ProjectShowContainer from './project/project_show_container';
 import Switch from '../../node_modules/react-router-dom/Switch';
+import ProjectNewFormContainer from './project/project_new_container';
+import ProjectEditFormContainer from './project/project_edit_container';
 
 
-const App = () =>(
+
+const App = () => (
   <div>
     <header>
       <NavBarContainer />
@@ -23,6 +26,7 @@ const App = () =>(
       <Route exact path="/api/projects/" component={ProjectIndexContainer} />
       <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
       <Route exact path="/new/project/" component={ProjectNewFormContainer} />
+      <Route exact path="/edit/project/" component={ProjectEditFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
@@ -31,5 +35,5 @@ const App = () =>(
   </div>
 );
 
-{/* <div className="content-spacer"></div> */}
+
 export default App;
