@@ -8,7 +8,12 @@ export const fetchAllSteps = () => dispatch => (
   StepAPIUtil.fetchAllSteps().then(steps => dispatch(receiveAllSteps(steps)))
 );
 export const createStep = (step) => dispatch => (
-  StepAPIUtil.createStep(step).then(steps => dispatch(receiveAllSteps(steps)))
+  StepAPIUtil.createStep(step).then(steps => {
+    console.log('creating step resp');
+    console.log(steps);
+    return dispatch(receiveAllSteps(steps));
+    } 
+  )
 );
 export const deleteStep = (stepId) => dispatch => (
   StepAPIUtil.deleteStep(stepId).then(steps => dispatch(receiveAllSteps(steps)))

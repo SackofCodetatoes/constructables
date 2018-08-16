@@ -1,7 +1,7 @@
 class Api::StepsController < ApplicationController
   def create
     @step = Step.new(step_params)
-
+    # title: step_params.title, body: step_params.body, project_id: step_params.project_id, step_index: step_params.project_id
     if @step.save
       project = @step.project
       render json: 'MISSON COMPLETE'

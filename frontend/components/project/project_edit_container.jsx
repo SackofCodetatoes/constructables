@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { updateProject } from '../../actions/project_actions';
 import ProjectForm from './project_form';
-import { updateStep } from '../../actions/step_actions';
+import { updateStep, createStep } from '../../actions/step_actions';
 const mapStateToProps = (state, ownProps) => {
   const defaultProject = {
     title: '',
@@ -20,7 +20,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: (project) => dispatch(updateProject(project)),
-  processStep: (step) => dispatch(updateStep(step))
+  newStep: (step) => dispatch(createStep(step)),
+  editStep: (step) => dispatch(updateStep(step))
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm);

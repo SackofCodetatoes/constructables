@@ -72,7 +72,9 @@ class ProjectForm extends React.Component {
           //if formtype conditiona; 'new' v edit, set project id if new 
           //new : resp payload
           //edit : this.steps[i].project_id
-          let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.state.steps[i].project_id;
+          // debugger
+
+          let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.props.project.id;
           // console.log(this.steps ? this.steps[i].project_id : resp.payload.project.id);
           // let projectId;
           // if(this.)
@@ -83,7 +85,12 @@ class ProjectForm extends React.Component {
             id: this.state.steps[i].id,
             project_id: projectId
           });
-          this.props.processStep(step);
+          console.log(step);
+          if(step.id === undefined){
+            console.log('step id is undefined');
+            delete step['id'];
+            this.props.newStep(step);
+          } else this.props.editStep(step);
         };
       })
        .then(resp => this.props.history.push(`/api/projects/${project.id}`));
