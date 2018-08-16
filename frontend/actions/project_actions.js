@@ -9,9 +9,10 @@ export const MODIFY_PROJECT = 'MODIFY_PROJECT';
 export const fetchAllProjects = () => dispatch => (
   ProjectAPIUtil.fetchAllProjects().then(projects => dispatch(receiveAllProjects(projects)))
 );
-export const fetchProject = (projectId) => dispatch => (
-  ProjectAPIUtil.fetchProject(projectId).then(project => dispatch(receiveProject(project)))
-);
+export const fetchProject = (projectId) => dispatch => {
+  
+  return ProjectAPIUtil.fetchProject(projectId).then(project => dispatch(receiveProject(project)))
+};
 export const deleteProject = (projectId) => dispatch => (
   ProjectAPIUtil.deleteProject(projectId).then(project => dispatch(removeProject(projectId)))
 );
@@ -23,8 +24,9 @@ export const updateProject = (project) => dispatch => {
 export const createProject = (project) => dispatch => (
   ProjectAPIUtil.createProject(project).then(project => dispatch(receiveProject(project)))
 );
-const modifiedProject = () => ({
-  type: MODIFY_PROJECT
+const modifiedProject = (project) => ({
+  type: MODIFY_PROJECT,
+  project
 })
 const receiveAllProjects = (payload) => ({
   type: RECEIVE_ALL_PROJECTS,

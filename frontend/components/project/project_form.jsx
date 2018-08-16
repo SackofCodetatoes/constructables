@@ -11,6 +11,8 @@ class ProjectForm extends React.Component {
     //   user_id: this.props.currentUserId,
     //   steps: []
     // };
+    
+    this.props.edit
     this.state = { project: this.props.project, steps: this.props.steps } 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addStep = this.addStep.bind(this);
@@ -19,8 +21,6 @@ class ProjectForm extends React.Component {
 
   update(field) {
     let nextProject = Object.assign({}, this.state.project);
-    console.log('test enxt project');
-    console.log(nextProject);
     return e => {
       nextProject[field] = e.currentTarget.value;
       return this.setState({
@@ -43,7 +43,8 @@ class ProjectForm extends React.Component {
   addStep(e) {
     e.preventDefault();
     let nextSteps = this.state.steps;
-    nextSteps.push({title: '', body: ''});
+    // nextSteps.push({title: '', body: ''});
+    nextSteps[Object.keys(nextSteps).length] = { title: '', body: '' };
     this.setState({
       steps: nextSteps
     });
@@ -63,19 +64,29 @@ class ProjectForm extends React.Component {
 
     //resp has payload.project.id
     this.props.processForm(project).
-    // then(resp => {
-    //   for(let i = 0; i < this.state.steps.length; i++){
-    //     // console.log(resp.payload.project.id)
-    //     let step = Object.assign({}, {
-    //       title: this.state.steps[i].title,
-    //       body: this.state.steps[i].body,
-    //       step_index: i,
-    //       project_id: resp.payload.project.id,
-    //     });
-    //     this.props.processStep(step);
-    //   };
-    // })
-    then(resp => this.props.history.push(`/api/projects/${project.id}`));
+      then(resp => {
+        for(let i = 0; i < Object.keys(this.state.steps).length; i++){
+          console.log('check steps');
+          console.log(this.props);
+          console.log(this.state);
+          //if formtype conditiona; 'new' v edit, set project id if new 
+          //new : resp payload
+          //edit : this.steps[i].project_id
+          let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.state.steps[i].project_id;
+          // console.log(this.steps ? this.steps[i].project_id : resp.payload.project.id);
+          // let projectId;
+          // if(this.)
+          let step = Object.assign({}, {
+            title: this.state.steps[i].title,
+            body: this.state.steps[i].body,
+            step_index: i,
+            id: this.state.steps[i].id,
+            project_id: projectId
+          });
+          this.props.processStep(step);
+        };
+      })
+       .then(resp => this.props.history.push(`/api/projects/${project.id}`));
   }
 
   render() {
@@ -83,7 +94,7 @@ class ProjectForm extends React.Component {
       const steps = this.state.steps
       // <div>{this.state.steps}</div>
       return (
-         this.state.steps.map((step, index) => 
+         Object.values(this.state.steps).map((step, index) => 
             <div>
               <input type="text" onChange={this.updateStep(index, 'title')} placeholder='Step: Type your title...' value={step.title}/>
               <input type="text" onChange={this.updateStep(index, 'body')} placeholder='Type your step description' value={step.body}/>

@@ -13,8 +13,14 @@ export const createStep = (step) => dispatch => (
 export const deleteStep = (stepId) => dispatch => (
   StepAPIUtil.deleteStep(stepId).then(steps => dispatch(receiveAllSteps(steps)))
 );
-
+export const updateStep = (step) => dispatch => (
+  StepAPIUtil.updateStep(step).then(response => dispatch(modifyStep(response)))
+)
 //actions
+
+const modifyStep = (step) => ({
+  type: MODIFY_STEP
+})
 
 const receiveAllSteps = (steps) => ({
   type: RECEIVE_ALL_STEPS,

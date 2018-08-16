@@ -11,6 +11,7 @@ json.steps do
       json.title step.title
       json.body step.body
       json.step_index step.step_index
+      json.project_id step.project_id
     end
   end
 end

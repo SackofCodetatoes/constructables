@@ -8,10 +8,10 @@ const mapStateToProps = (state, ownProps) => {
     description: '',
     user_id: state.session.id,
   } 
-  const defaultSteps = [];
+  const defaultSteps = {};
 
   const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
-  const steps =  Object.values(state.entities.steps) || defaultSteps;
+  const steps =  state.entities.steps || defaultSteps;
   const errors = state.errors.project;
   const formType = 'edit';
   const currentUserId = state.session.id;
@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: (project) => dispatch(updateProject(project)),
-  // processStep: (step) => dispatch(updateStep(step))
+  processStep: (step) => dispatch(updateStep(step))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm);

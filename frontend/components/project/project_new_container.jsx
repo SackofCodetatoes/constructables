@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     description: '',
     user_id: state.session.id,
   } 
-  const steps = [];
+  const steps = {};
   const errors = state.errors.project;
   const formType = 'new';
   const currentUserId = state.session.id;
