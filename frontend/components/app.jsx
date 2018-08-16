@@ -26,7 +26,7 @@ const App = () => (
       <Route exact path="/api/projects/" component={ProjectIndexContainer} />
       <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
       <Route exact path="/new/project/" component={ProjectNewFormContainer} />
-      <Route exact path="/edit/project/" component={ProjectEditFormContainer} />
+      <Route exact path="/edit/project/:projectId" component={ProjectEditFormContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>

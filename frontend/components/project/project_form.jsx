@@ -57,22 +57,25 @@ class ProjectForm extends React.Component {
     const project = Object.assign({}, { 
       title: this.state.project.title, 
       description: this.state.project.description,
-      user_id: this.state.project.user_id
+      user_id: this.state.project.user_id,
+      id: this.state.project.id
     });
 
     //resp has payload.project.id
-    this.props.processForm(project).then(resp => {
-      for(let i = 0; i < this.state.steps.length; i++){
-        // console.log(resp.payload.project.id)
-        let step = Object.assign({}, {
-          title: this.state.steps[i].title,
-          body: this.state.steps[i].body,
-          step_index: i,
-          project_id: resp.payload.project.id,
-        });
-        this.props.processStep(step);
-      };
-    }).then(this.props.history.push('/api/projects'));
+    this.props.processForm(project).
+    // then(resp => {
+    //   for(let i = 0; i < this.state.steps.length; i++){
+    //     // console.log(resp.payload.project.id)
+    //     let step = Object.assign({}, {
+    //       title: this.state.steps[i].title,
+    //       body: this.state.steps[i].body,
+    //       step_index: i,
+    //       project_id: resp.payload.project.id,
+    //     });
+    //     this.props.processStep(step);
+    //   };
+    // })
+    then(resp => this.props.history.push(`/api/projects/${project.id}`));
   }
 
   render() {

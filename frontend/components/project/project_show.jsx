@@ -21,7 +21,7 @@ class ProjectShow extends React.Component {
     const { project } = this.props;
     const { user } = this.props;
     const { steps } = this.props;
-
+    // console.log(this.props);
     const renderProjectOptions = () => {
       if(this.props.currentUserId === project.user_id ) {
         return (
@@ -29,9 +29,9 @@ class ProjectShow extends React.Component {
             <button onClick={() => this.props.deleteProject(project.id)} className='project-option-button project-delete-button'>
               Delete Project
             </button>
-            <button className='project-option-button'>
-              Edit
-            </button>
+            <Link to={`/edit/project/${this.props.match.params.projectId}`}>
+              <button className='project-option-button'>Edit</button>
+            </Link>
           </div>
         )
       } else return null;
