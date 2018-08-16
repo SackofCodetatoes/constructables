@@ -14,6 +14,8 @@ const stepsReducer = (state = {}, action) => {
   let newState = {};
   switch (action.type) {
     case RECEIVE_PROJECT:
+    console.log('were a hit');
+    console.log(action.payload);
       return merge({}, state, action.payload.steps);
     default:
       return state;
