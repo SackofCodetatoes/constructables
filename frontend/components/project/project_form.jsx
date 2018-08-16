@@ -53,8 +53,6 @@ class ProjectForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('the state');
-    console.log(this.state);
     const project = Object.assign({}, { 
       title: this.state.project.title, 
       description: this.state.project.description,
@@ -63,18 +61,15 @@ class ProjectForm extends React.Component {
     });
 
     //resp has payload.project.id
+    // let outerRef = 'replaceme';
     this.props.processForm(project).
       then(resp => {
+        let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.props.project.id;
         for(let i = 0; i < Object.keys(this.state.steps).length; i++){
-          console.log('check steps');
-          console.log(this.props);
-          console.log(this.state);
           //if formtype conditiona; 'new' v edit, set project id if new 
           //new : resp payload
           //edit : this.steps[i].project_id
-          // debugger
 
-          let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.props.project.id;
           // console.log(this.steps ? this.steps[i].project_id : resp.payload.project.id);
           // let projectId;
           // if(this.)
@@ -92,8 +87,10 @@ class ProjectForm extends React.Component {
             this.props.newStep(step);
           } else this.props.editStep(step);
         };
+        // debugger
+        this.props.history.push(`/api/projects/${projectId}`)
       })
-       .then(resp => this.props.history.push(`/api/projects/${project.id}`));
+    // this.props.history.push(`/api/projects/${project.id}`)
   }
 
   render() {

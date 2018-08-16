@@ -4,7 +4,7 @@ class Api::StepsController < ApplicationController
     # title: step_params.title, body: step_params.body, project_id: step_params.project_id, step_index: step_params.project_id
     if @step.save
       project = @step.project
-      render json: 'MISSON COMPLETE'
+      render json: project
     else
       render json: @step.errors.full_messages, status: 422
     end

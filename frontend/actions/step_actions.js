@@ -9,8 +9,6 @@ export const fetchAllSteps = () => dispatch => (
 );
 export const createStep = (step) => dispatch => (
   StepAPIUtil.createStep(step).then(steps => {
-    console.log('creating step resp');
-    console.log(steps);
     return dispatch(receiveAllSteps(steps));
     } 
   )
@@ -24,7 +22,8 @@ export const updateStep = (step) => dispatch => (
 //actions
 
 const modifyStep = (step) => ({
-  type: MODIFY_STEP
+  type: MODIFY_STEP, 
+  step
 })
 
 const receiveAllSteps = (steps) => ({
