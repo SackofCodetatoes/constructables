@@ -1,0 +1,56 @@
+.project-show-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  /* text-align: center; */
+  margin: 25px;
+}
+.project-header, .project-step-title {
+  text-align: center;
+}
+.project-step-title {
+  font-weight: 700;
+  font-size: 20px;
+}
+.project-show-container {
+  width: 67%;
+}
+.project-title {
+  font-size: 36px;
+  font-weight: 700; 
+}
+.project-description {
+  /* align-self: flex-start; */
+}
+.project-options {
+  position: absolute;
+  right: 1%;
+  top: 15%;
+  /* top: 150px; */
+  /* right: 150px; */
+
+}
+.project-option-button {
+  padding: 10px; 
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  margin: 5px;
+}
+.project-delete-button {
+  color: #fff;
+  background-color: red;
+}
+.project-description {
+  margin-top: 15px;
+}
+
+.project-show-steps {
+  margin-top: 15px;
+}
+.project-step-description {
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+}

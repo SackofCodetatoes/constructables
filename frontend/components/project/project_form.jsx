@@ -1,22 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import StepContainer from '../step/step_container';
+import { merge } from 'lodash';
 class ProjectForm extends React.Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   title: '',
-    //   description: '',
-    //   user_id: this.props.currentUserId,
-    //   steps: []
-    // };
-    
     this.props.edit
     this.state = { project: this.props.project, steps: this.props.steps } 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addStep = this.addStep.bind(this);
     this.updateStep = this.updateStep.bind(this);
+    this.deleteStep = this.deleteStep.bind(this);
   } 
 
   update(field) {
@@ -27,6 +22,21 @@ class ProjectForm extends React.Component {
         project: nextProject
       });
     };
+  }
+
+  deleteStep(stepIndex){
+    const numUpdates = Object.keys(this.state.steps).length;
+    let nextState = merge({}, this.state);
+    delete nextState.steps[stepIndex];
+    for(let i = stepIndex; i < numUpdates; i++){
+      // debugger
+      nextState.steps[i] = nextState.steps[i+1];
+      // nextState.steps[i].step_index = i;
+    }
+    delete nextState.steps[numUpdates - 1];
+    this.setState({
+      steps: nextState.steps
+    })
   }
 
   updateStep(stepIndex, stepField) {
@@ -69,10 +79,6 @@ class ProjectForm extends React.Component {
           //if formtype conditiona; 'new' v edit, set project id if new 
           //new : resp payload
           //edit : this.steps[i].project_id
-
-          // console.log(this.steps ? this.steps[i].project_id : resp.payload.project.id);
-          // let projectId;
-          // if(this.)
           let step = Object.assign({}, {
             title: this.state.steps[i].title,
             body: this.state.steps[i].body,
@@ -87,41 +93,40 @@ class ProjectForm extends React.Component {
             this.props.newStep(step);
           } else this.props.editStep(step);
         };
-        // debugger
         this.props.history.push(`/api/projects/${projectId}`)
       })
-    // this.props.history.push(`/api/projects/${project.id}`)
   }
 
   render() {
     const renderSteps = () => {
       const steps = this.state.steps
-      // <div>{this.state.steps}</div>
       return (
          Object.values(this.state.steps).map((step, index) => 
-            <div>
-              <input type="text" onChange={this.updateStep(index, 'title')} placeholder='Step: Type your title...' value={step.title}/>
-              <input type="text" onChange={this.updateStep(index, 'body')} placeholder='Type your step description' value={step.body}/>
+            <div className="step-form-container">
+              <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Step: Type your title...' value={step.title}/><br/>
+              {/* <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} >{step.body}</textarea> */}
+              <input  type='text' className='project-form-body' onChange={this.updateStep(index, 'body')} value={step.body}/> 
+              <button onClick={() => this.deleteStep(index)} className= "remove-step-button rounded clickable">x</button>
             </div>
           )
       );
     }
-    // console.log(this.props);
     return (
       <div className="project-form-page">
-      <div>
-        <form>
-          <input type="submit" onClick={this.handleSubmit} value="Publish" />
-          <div>
-            <input type="text" onChange={this.update('title')} value={this.state.project.title} placeholder="Project Title" />
-            <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/>
-          </div>
-        </form>
+        <div className="project-form-container">
+          <form className="project-form">
+            <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
+            <div className="project-form-project" >
+              <input type="textarea" className='project-form-title' onChange={this.update('title')} value={this.state.project.title} placeholder="Project Title" /><br/>
+              <textarea className='project-form-body' rows="4" cols='50' onChange={this.update('description')}>{this.state.project.description}</textarea>
+              {/* <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/> */}
+            </div>
+          </form>
 
-        { renderSteps() }
+          { renderSteps() }
 
-        <button onClick={this.addStep}>Add Step</button>
-      </div>
+          <button className='add-step-button rounded clickable' onClick={this.addStep}>Add Step</button>
+        </div>
     </div>
     );
   }

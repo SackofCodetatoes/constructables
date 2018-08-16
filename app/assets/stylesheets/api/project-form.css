@@ -1,0 +1,60 @@
+.project-form-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  margin: 25px;
+}
+.project-form {
+  /* width:  */
+  /* margin: 5px; */
+}
+.step-form-container,
+.project-form-project {
+  align-content: center;
+  height: 140px;
+  text-align: center;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #eee;
+  position: relative;
+}
+.project-form-container {
+  width: 960px;
+  align-items: center;
+  /* position: relative; */
+}
+.remove-step-button {
+  position: absolute;
+  bottom: 20px;
+  right: 3%;
+  border: 1px solid #ccc
+  /* display: none; */
+  
+}
+.project-form-title, .project-form-body {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.rounded {
+  border-radius: 5px;
+}
+.publish-button{
+  border: 1px #eee solid;
+  background-color: orange;
+  padding: 10px;
+  left: 0;
+}
+.add-step-button{
+  border: 1px #ccc solid;
+  padding: 10px;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}

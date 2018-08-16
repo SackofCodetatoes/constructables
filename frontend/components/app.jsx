@@ -18,7 +18,7 @@ const App = () => (
   <div>
     <header>
       <NavBarContainer />
-      <div className="spacer"> <span className= 'motto'>Build anything</span> </div>
+      <div className="spacer"> <span className= 'motto'>Build anything!</span> </div>
     </header>
     
    

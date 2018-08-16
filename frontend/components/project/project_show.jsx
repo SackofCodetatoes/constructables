@@ -11,7 +11,8 @@ class ProjectShow extends React.Component {
     let renSteps = [];
 
     for (let i = 0; i < Object.keys(steps).length; i++) {
-      renSteps.push(<div><h3>{steps[i].title}</h3> <li>{steps[i].body}</li></div>);
+      renSteps.push(<li className="project-step-item"><div className="project-step-container">
+      <h3 className='project-step-title'>Step {i+1}: {steps[i].title}</h3><p className='project-step-description'>{steps[i].body}</p></div></li>);
     }
 
     return renSteps;
@@ -43,15 +44,17 @@ class ProjectShow extends React.Component {
 
     return (
       <div className='project-show-page'>
-        <div className='project-header'>
-          <ul>
-            <li className='project-title' >Title: {project.title}</li>
-            <li>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</li>
-            <li className='project-descripton'>Description: {project.description}</li>
-            <div>{this.renderSteps(steps) }</div>
+      { renderProjectOptions() }
+        <div className='project-show-container'>
+          <div className='project-header'>
+              <h2 className='project-title' >Title: {project.title}</h2>
+              <label>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</label><br/>
+              <p className='project-description'>Description: {project.description}</p>
+          </div>
+          <ul className="project-show-steps">
+            {this.renderSteps(steps)}
           </ul>
         </div>
-        { renderProjectOptions() }
       </div>
     )
   }
