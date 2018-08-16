@@ -5,27 +5,32 @@ class ProjectForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      title: '',
-      description: '',
-      user_id: this.props.currentUserId,
-      steps: []
-    };
+    // this.state = {
+    //   title: '',
+    //   description: '',
+    //   user_id: this.props.currentUserId,
+    //   steps: []
+    // };
+    this.state = { project: this.props.project, steps: this.props.steps } 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addStep = this.addStep.bind(this);
     this.updateStep = this.updateStep.bind(this);
   } 
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    let nextProject = Object.assign({}, this.state.project);
+    console.log('test enxt project');
+    console.log(nextProject);
+    return e => {
+      nextProject[field] = e.currentTarget.value;
+      return this.setState({
+        project: nextProject
+      });
+    };
   }
 
   updateStep(stepIndex, stepField) {
     let nextStep = this.state.steps;
-    console.log('heres a step');
-    // debugger
     return e => {
       nextStep[stepIndex][stepField] = e.currentTarget.value;//possible problem with keying in
       console.log(nextStep);
@@ -50,9 +55,9 @@ class ProjectForm extends React.Component {
     console.log('the state');
     console.log(this.state);
     const project = Object.assign({}, { 
-      title: this.state.title, 
-      description: this.state.description,
-      user_id: this.state.user_id
+      title: this.state.project.title, 
+      description: this.state.project.description,
+      user_id: this.state.project.user_id
     });
 
     //resp has payload.project.id
@@ -83,15 +88,15 @@ class ProjectForm extends React.Component {
           )
       );
     }
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="project-form-page">
       <div>
         <form>
           <input type="submit" onClick={this.handleSubmit} value="Publish" />
           <div>
-            <input type="text" onChange={this.update('title')} value={this.state.title} placeholder="Project Title" />
-            <input type="text" onChange={this.update('description')} value={this.state.description} placeholder="Project Description"/>
+            <input type="text" onChange={this.update('title')} value={this.state.project.title} placeholder="Project Title" />
+            <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/>
           </div>
         </form>
 

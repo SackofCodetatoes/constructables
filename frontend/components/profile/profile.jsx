@@ -34,8 +34,9 @@ class Profile extends React.Component {
         <Link className="session-link" onClick={() => this.props.clearSessionErrors()} to="/login">Login</Link><span>   |   </span><Link className="session-link" onClick={() => this.props.clearSessionErrors()} to="/signup">Sign Up</Link> 
       </div>
     );
-
-    return currentUser ? greetUser() : noUser();
+    console.log('current user');
+    console.log(currentUser);
+    return (currentUser ? greetUser() : noUser());
   }
 }
 export default Profile;
