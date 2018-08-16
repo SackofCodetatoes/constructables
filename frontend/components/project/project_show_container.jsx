@@ -5,7 +5,8 @@ import ProjectShow from './project_show';
 const mapStateToProps = (state, ownProps) => ({
   project: state.entities.projects[ownProps.match.params.projectId],
   user: state.entities.users,
-  currentUserId: state.session.id
+  currentUserId: state.session.id,
+  steps: state.entities.steps
 });
 
 const mapDispatchToProps = dispatch => ({
