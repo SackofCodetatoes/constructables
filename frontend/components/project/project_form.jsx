@@ -95,7 +95,7 @@ class ProjectForm extends React.Component {
             id: this.state.steps[i].id,
             project_id: projectId
           });
-          console.log(step);
+
           if(step.id === undefined){
             console.log('step id is undefined');
             delete step['id'];
