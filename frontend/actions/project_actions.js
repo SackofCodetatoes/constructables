@@ -4,6 +4,7 @@ export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const MODIFY_PROJECT = 'MODIFY_PROJECT';
+export const RECEIVE_SEARCH_PROJECTS = 'RECEIVE_SEARCH_PROJECTS';
 
 
 //thunks
@@ -11,14 +12,12 @@ export const fetchAllProjects = () => dispatch => (
   ProjectAPIUtil.fetchAllProjects().then(projects => dispatch(receiveAllProjects(projects)))
 );
 export const fetchProject = (projectId) => dispatch => {
-  
   return ProjectAPIUtil.fetchProject(projectId).then(project => dispatch(receiveProject(project)))
 };
 export const deleteProject = (projectId) => dispatch => (
   ProjectAPIUtil.deleteProject(projectId).then(project => dispatch(removeProject(projectId)))
 );
 export const updateProject = (project) => dispatch => (
-  // ProjectAPIUtil.updateProject(project).then(project => dispatch(receiveProject(project)))
   ProjectAPIUtil.updateProject(project).then(project => dispatch(modifiedProject(project)),
     error => dispatch(receiveErrors(error))
   )
@@ -28,6 +27,7 @@ export const createProject = (project) => dispatch => (
     errors => dispatch(receiveErrors(errors))  
   )
 );
+
 
 const receiveErrors = (errors) => ({
   type: RECEIVE_PROJECT_ERRORS,
