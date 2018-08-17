@@ -29,7 +29,7 @@ class ProjectShow extends React.Component {
           <div className="project-options">
             <button onClick={() => this.props.deleteProject(project.id)} className='project-option-button project-delete-button'>
               Delete Project
-            </button>
+            </button><br/>
             <Link to={`/edit/project/${this.props.match.params.projectId}`}>
               <button className='project-option-button'>Edit</button>
             </Link>
@@ -47,7 +47,7 @@ class ProjectShow extends React.Component {
       { renderProjectOptions() }
         <div className='project-show-container'>
           <div className='project-header'>
-              <h2 className='project-title' >Title: {project.title}</h2>
+              <h2 className='project-title' >{project.title}</h2>
               <label>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</label><br/>
               <p className='project-description'>Description: {project.description}</p>
           </div>

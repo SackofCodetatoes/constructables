@@ -12,9 +12,9 @@ class Profile extends React.Component {
     const greetUser = () => (
       <div className="profile-container">
         <button className="profile-icon clickable">
-          <img
+          {/* <img
             src={"https://i.kym-cdn.com/entries/icons/original/000/000/142/feelsgoodman.png"}
-          />
+          /> */}
         </button>
         <div className="profile-menu">
           <label className="profile-name">{currentUser.username}</label> 

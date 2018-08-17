@@ -42,3 +42,10 @@
   height: 80px;
   margin-bottom: 27px;
 }
+.project-index-text {
+  list-style: none;
+  padding: 20px;
+}
+.project-index-title {
+  font-weight: 700;
+}

@@ -7,6 +7,7 @@
   display: flex;
   right: 0;
   outline: none;
+  background: url("https://cdn.onlinewebfonts.com/svg/img_314945.png");
   background-size: cover;
 }
 .profile-icon img {
