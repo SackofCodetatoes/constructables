@@ -80,6 +80,7 @@ class ProjectForm extends React.Component {
 
     //resp has payload.project.id
     // let outerRef = 'replaceme';
+    // debugger
     this.props.processForm(project).
       then(resp => {
         let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.props.project.id;
@@ -103,6 +104,9 @@ class ProjectForm extends React.Component {
         };
         this.props.history.push(`/api/projects/${projectId}`)
       })
+      // debugger
+
+
   }
 
 
@@ -112,7 +116,7 @@ class ProjectForm extends React.Component {
       const steps = this.state.steps;
       return (
          Object.values(this.state.steps).map((step, index) => 
-            <div className="step-form-container">
+            <div className="step-form-container" key={index}>
               <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Step: Type your title...' value={step.title}/><br/>
               <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} value={step.body} ></textarea>
               {/* <input  type='text' className='project-form-body' onChange={this.updateStep(index, 'body')} value={step.body}/>  */}
@@ -122,7 +126,7 @@ class ProjectForm extends React.Component {
       );
     }
 
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="project-form-page" key='5'>
         <div className="project-form-container">
