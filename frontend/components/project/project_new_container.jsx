@@ -11,10 +11,10 @@ const mapStateToProps = (state, ownProps) => {
     user_id: state.session.id,
   } 
   const steps = {};
-  const errors = state.errors.project;
+  const projectErrors = state.errors.project;
   const formType = 'new';
   const currentUserId = state.session.id;
-  return { project, steps, errors, formType, currentUserId } ;
+  return { project, steps, projectErrors, formType, currentUserId } ;
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

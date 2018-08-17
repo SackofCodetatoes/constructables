@@ -29,9 +29,7 @@ class ProjectForm extends React.Component {
     let nextState = merge({}, this.state);
     delete nextState.steps[stepIndex];
     for(let i = stepIndex; i < numUpdates; i++){
-      // debugger
       nextState.steps[i] = nextState.steps[i+1];
-      // nextState.steps[i].step_index = i;
     }
     delete nextState.steps[numUpdates - 1];
     this.setState({
@@ -58,6 +56,17 @@ class ProjectForm extends React.Component {
       steps: nextSteps
     });
     // console.log(this.state);
+  }
+  renderProjectErrors() {
+    return (
+      <ul className="project-form-errors">
+        {this.props.projectErrors.map((error, i) => (
+          <li className="simple-error project-error" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   handleSubmit(e) {
@@ -96,10 +105,11 @@ class ProjectForm extends React.Component {
       })
   }
 
+
+
   render() {
     const renderSteps = () => {
       const steps = this.state.steps;
-      // debugger
       return (
          Object.values(this.state.steps).map((step, index) => 
             <div className="step-form-container">
@@ -111,12 +121,15 @@ class ProjectForm extends React.Component {
           )
       );
     }
+
+    console.log(this.props);
     return (
-      <div className="project-form-page">
+      <div className="project-form-page" key='5'>
         <div className="project-form-container">
           <form className="project-form">
             <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
             <div className="project-form-project" >
+              { this.renderProjectErrors() }
               <input type="textarea" className='project-form-title' onChange={this.update('title')} value={this.state.project.title} placeholder="Project Title" /><br/>
               <textarea className='project-form-body' rows="4" cols='50' onChange={this.update('description')}>{this.state.project.description}</textarea>
               {/* <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/> */}

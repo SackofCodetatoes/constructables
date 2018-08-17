@@ -16,22 +16,26 @@ import ProjectEditFormContainer from './project/project_edit_container';
 
 const App = () => (
   <div>
-    <header>
-      <NavBarContainer />
-      <div className="spacer"> <span className= 'motto'>Build anything!</span> </div>
-    </header>
+    <div className='content'>
+      <header>
+        <NavBarContainer />
+        <div className="spacer"> <span className= 'motto'>Build anything!</span> </div>
+      </header>
+      
     
-   
-    <Switch>
-      <Route exact path="/api/projects/" component={ProjectIndexContainer} />
-      <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
-      <Route exact path="/new/project/" component={ProjectNewFormContainer} />
-      <Route exact path="/edit/project/:projectId" component={ProjectEditFormContainer} />
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    </Switch>
+      <Switch>
+        <Route exact path="/api/projects/" component={ProjectIndexContainer} />
+        <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
+        <Route exact path="/new/project/" component={ProjectNewFormContainer} />
+        <Route exact path="/edit/project/:projectId" component={ProjectEditFormContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      </Switch>
 
+    </div>
     <footer className="footer"></footer>
+
+    
   </div>
 );
 

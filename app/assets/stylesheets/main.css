@@ -1,9 +1,9 @@
 * {
   font-family: arial;
 }
-body {
+.content {
 
-  min-height: 500px;
+  min-height: 800px;
 }
 
 .clickable:hover {

@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { updateProject } from '../../actions/project_actions';
 import ProjectForm from './project_form';
 import { updateStep, createStep } from '../../actions/step_actions';
+
+
 const mapStateToProps = (state, ownProps) => {
   const defaultProject = {
     title: '',
@@ -12,10 +14,10 @@ const mapStateToProps = (state, ownProps) => {
 
   const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
   const steps =  state.entities.steps || defaultSteps;
-  const errors = state.errors.project;
+  const projectErrors = state.errors.project;
   const formType = 'edit';
   const currentUserId = state.session.id;
-  return { project, steps, errors, formType, currentUserId } ;
+  return { project, steps, projectErrors, formType, currentUserId } ;
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
