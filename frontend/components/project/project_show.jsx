@@ -39,7 +39,7 @@ class ProjectShow extends React.Component {
     }
 
     if(!project || !user) {
-      return (<div>Uhhh, gimmie a sec...</div>);
+      return (<div>Something went wrong or page doesnt exist</div>);
     }
 
     return (

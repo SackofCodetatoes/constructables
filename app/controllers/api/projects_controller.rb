@@ -16,10 +16,9 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  def new
-  end
-
-  def edit
+  def search
+    @projects = Project.all
+    render json: 'specifics?'
   end
 
   def update
