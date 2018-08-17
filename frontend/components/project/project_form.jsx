@@ -43,7 +43,6 @@ class ProjectForm extends React.Component {
     let nextStep = this.state.steps;
     return e => {
       nextStep[stepIndex][stepField] = e.currentTarget.value;//possible problem with keying in
-      console.log(nextStep);
       return this.setState({
         steps: nextStep
       });
@@ -99,13 +98,14 @@ class ProjectForm extends React.Component {
 
   render() {
     const renderSteps = () => {
-      const steps = this.state.steps
+      const steps = this.state.steps;
+      // debugger
       return (
          Object.values(this.state.steps).map((step, index) => 
             <div className="step-form-container">
               <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Step: Type your title...' value={step.title}/><br/>
-              {/* <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} >{step.body}</textarea> */}
-              <input  type='text' className='project-form-body' onChange={this.updateStep(index, 'body')} value={step.body}/> 
+              <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} value={step.body} ></textarea>
+              {/* <input  type='text' className='project-form-body' onChange={this.updateStep(index, 'body')} value={step.body}/>  */}
               <button onClick={() => this.deleteStep(index)} className= "remove-step-button rounded clickable">x</button>
             </div>
           )
