@@ -5,7 +5,7 @@
 Constructables is an instructional website with user submitted guides on how to construct or create projects. Constructables is strongly inspired by instructables and was created for learning purposes. Constructables uses Rails and PostgreSQL for backend services followed by React.js and Redux for frontend views. 
 This project was constructed in a 10 day deadline with future features and revisions to come. 
 
-![Constructables Index](https://github.com/SackofCodetatoes/constructables/blob/master/app/assets/images/index.png)
+![Constructables Index](https://github.com/SackofCodetatoes/constructables/blob/master/app/assets/images/index.PNG)
 
 ## Features
 * Secure frontend and backend user authentication using BCrypt
