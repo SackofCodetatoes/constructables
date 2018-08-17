@@ -19,11 +19,18 @@
   display: none;
 
 }
-.profile-name {
+.profile-text {
   margin-left: 20px;
+  left: 10px;
   position: absolute;
   margin-top: 20px;
   width: 130px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+.profile-name {
+  padding: 20px;
+  font-weight: 700;
 }
 .profile-icon:focus + .profile-menu, .profile-menu:hover {
   display: block;
@@ -32,7 +39,7 @@
   background-color:#fff;
   z-index: 4;
   width: 328px;
-  height: 255px;
+  height: 150px;
   right: 25px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -60,8 +67,7 @@
   border: 1px #c55b00 solid;
   border-radius: 5px;
   background-color: #df6902;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 10px;
   color: white;
 }
 .profile-new-project:hover {

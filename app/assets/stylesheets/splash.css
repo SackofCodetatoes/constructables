@@ -1,0 +1,15 @@
+.splash-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 700;
+  /* background-image: url("https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") */
+}
+.splash-text {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 2px #bbb;
+  left: 20px;
+  font-size: 75px;
+  font-family: Verdana;
+}

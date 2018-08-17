@@ -11,7 +11,7 @@ import ProjectShowContainer from './project/project_show_container';
 import Switch from '../../node_modules/react-router-dom/Switch';
 import ProjectNewFormContainer from './project/project_new_container';
 import ProjectEditFormContainer from './project/project_edit_container';
-
+import Splash from "./splash"
 
 
 const App = () => (
@@ -21,13 +21,13 @@ const App = () => (
         <NavBarContainer />
         <div className="spacer"> <span className= 'motto'>Build anything!</span> </div>
       </header>
-      
-    
+
       <Switch>
         <Route exact path="/api/projects/" component={ProjectIndexContainer} />
         <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
         <Route exact path="/new/project/" component={ProjectNewFormContainer} />
         <Route exact path="/edit/project/:projectId" component={ProjectEditFormContainer} />
+        <Route exact path="/" component={Splash} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
       </Switch>

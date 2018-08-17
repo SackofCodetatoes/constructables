@@ -17,7 +17,7 @@ class Profile extends React.Component {
           /> */}
         </button>
         <div className="profile-menu">
-          <label className="profile-name">{currentUser.username}</label> 
+          <label className="profile-text">Logged in as: <label className='profile-name'>{currentUser.username}</label></label> 
           <button className="logout-button" onClick={() => logout()}>Logout</button>
           <Link to='/new/project/'>
             <button className="profile-new-project">New Constructable »</button>

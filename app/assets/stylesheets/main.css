@@ -2,8 +2,10 @@
   font-family: arial;
 }
 .content {
-
-  min-height: 800px;
+  text-align: center;
+  width: 100%;
+  min-height: 700px;
+  overflow: hidden;
 }
 
 .clickable:hover {
