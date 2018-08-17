@@ -22,6 +22,9 @@
   background-color: #eee;
   position: relative;
 }
+.project-form-project {
+  background-color: #ddd
+}
 .project-form-container {
   width: 960px;
   align-items: center;
@@ -29,7 +32,7 @@
 }
 .remove-step-button {
   position: absolute;
-  bottom: 20px;
+  top: 20px;
   right: 3%;
   border: 1px solid #ccc
   /* display: none; */
@@ -68,6 +71,8 @@
   margin-top: 5px;
   margin-bottom: 10px;
 }
+
+
 
 
 /* Start the shake animation and make the animation last for 0.5 seconds */

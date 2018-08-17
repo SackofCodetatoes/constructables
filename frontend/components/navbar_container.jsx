@@ -8,6 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const search = {
     keywords: '',
   }
+
   return { search }
 };
 

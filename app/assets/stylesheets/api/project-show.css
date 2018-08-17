@@ -6,6 +6,8 @@
   text-align: left;
   /* text-align: center; */
   margin: 25px;
+  
+
 }
 .project-header, .project-step-title {
   text-align: center;
@@ -16,6 +18,11 @@
 }
 .project-show-container {
   width: 67%;
+    background-color: #fff;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 2px #aaa;
+    padding: 50px 20px 50px 20px ;
 }
 .project-title {
   font-size: 36px;

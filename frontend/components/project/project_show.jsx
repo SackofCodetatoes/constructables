@@ -49,7 +49,7 @@ class ProjectShow extends React.Component {
           <div className='project-header'>
               <h2 className='project-title' >{project.title}</h2>
               <label>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</label><br/>
-              <p className='project-description'>Description: {project.description}</p>
+              <p className='project-description'> {project.description}</p>
           </div>
           <ul className="project-show-steps">
             {this.renderSteps(steps)}

@@ -117,8 +117,8 @@ class ProjectForm extends React.Component {
       return (
          Object.values(this.state.steps).map((step, index) => 
             <div className="step-form-container" key={index}>
-              <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Step: Type your title...' value={step.title}/><br/>
-              <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} value={step.body} ></textarea>
+              <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Enter a step title!' value={step.title}/><br/>
+              <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} placeholder="What do you do in this step?" value={step.body} ></textarea>
               {/* <input  type='text' className='project-form-body' onChange={this.updateStep(index, 'body')} value={step.body}/>  */}
               <button onClick={() => this.deleteStep(index)} className= "remove-step-button rounded clickable">x</button>
             </div>
@@ -134,8 +134,8 @@ class ProjectForm extends React.Component {
             <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
             <div className="project-form-project" >
               { this.renderErrors() }
-              <input type="textarea" className='project-form-title' onChange={this.update('title')} value={this.state.project.title} placeholder="Project Title" /><br/>
-              <textarea className='project-form-body' rows="4" cols='50' onChange={this.update('description')}>{this.state.project.description}</textarea>
+              <input type="textarea" className='project-form-title' onChange={this.update('title')} value={this.state.project.title} placeholder="What's your project called?" /><br/>
+              <textarea className='project-form-body' rows="4" cols='50' placeholder="Describe your project!"onChange={this.update('description')}>{this.state.project.description}</textarea>
               {/* <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/> */}
             </div>
           </form>
