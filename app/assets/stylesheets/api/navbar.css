@@ -24,14 +24,40 @@
   height: 72px;
   z-index: 2;
 }
+.search-bar {
+  position: absolute;
+  left: 340px;
+  bottom: 30%;
+}
+.search-bar-field:focus, .search-bar-button:focus {
+  outline: none;
+}
+.search-bar-field {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  /* border-radius: 5px; */
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 10px 15px 10px 15px;
+}
+.search-bar-button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #bbb;
+  padding: 10px 15px 10px 15px;
+  border-left: none;
+  font-weight: 700;
+  color: white;
+}
 .projects-button {
   border: 1px solid #ccc;
   background-color: #eee;
   border-radius: 5px; 
   /* color: #777; */
   position: absolute;
-  left: 450px;
-  padding: 5px 10px 5px 10px;
+  left: 600px;
+  padding: 10px 15px 10px 15px;
   bottom: 30%;
 }
 

@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  clearSessionErrors: () => dispatch(clearSessionErrors())
+  clearSessionErrors: () => dispatch(clearSessionErrors()),
+  // processSearch: () => dispatch(search function)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

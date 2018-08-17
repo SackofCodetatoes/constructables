@@ -5,6 +5,7 @@
   justify-content: center;
 }
 .project-index-grid {
+  margin-top: 20px;
   width: 95%;
   display: flex;
   justify-content: center;
