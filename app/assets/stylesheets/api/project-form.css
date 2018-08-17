@@ -44,11 +44,13 @@
 .rounded {
   border-radius: 5px;
 }
-.publish-button{
+.publish-button {
   border: 1px #eee solid;
   background-color: orange;
-  padding: 10px;
-  left: 0;
+  padding: 10px 20px 10px 20px;
+  /* position: absolute; */
+  position: fixed;
+  right: 75px;
 }
 .add-step-button{
   border: 1px #ccc solid;
