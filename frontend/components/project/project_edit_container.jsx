@@ -14,10 +14,10 @@ const mapStateToProps = (state, ownProps) => {
 
   const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
   const steps =  state.entities.steps || defaultSteps;
-  const projectErrors = state.errors.project;
+  const errors = state.errors.project;
   const formType = 'edit';
   const currentUserId = state.session.id;
-  return { project, steps, projectErrors, formType, currentUserId } ;
+  return { project, steps, errors, formType, currentUserId } ;
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

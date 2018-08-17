@@ -11,7 +11,7 @@ class ProjectShow extends React.Component {
     let renSteps = [];
 
     for (let i = 0; i < Object.keys(steps).length; i++) {
-      renSteps.push(<li className="project-step-item"><div className="project-step-container">
+      renSteps.push(<li className="project-step-item" key={i}><div className="project-step-container">
       <h3 className='project-step-title'>Step {i+1}: {steps[i].title}</h3><p className='project-step-description'>{steps[i].body}</p></div></li>);
     }
 

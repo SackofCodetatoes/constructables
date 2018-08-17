@@ -57,10 +57,10 @@ class ProjectForm extends React.Component {
     });
     // console.log(this.state);
   }
-  renderProjectErrors() {
+  renderErrors() {
     return (
       <ul className="project-form-errors">
-        {this.props.projectErrors.map((error, i) => (
+        {this.props.errors.map((error, i) => (
           <li className="simple-error project-error" key={`error-${i}`}>
             {error}
           </li>
@@ -133,7 +133,7 @@ class ProjectForm extends React.Component {
           <form className="project-form">
             <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
             <div className="project-form-project" >
-              { this.renderProjectErrors() }
+              { this.renderErrors() }
               <input type="textarea" className='project-form-title' onChange={this.update('title')} value={this.state.project.title} placeholder="Project Title" /><br/>
               <textarea className='project-form-body' rows="4" cols='50' onChange={this.update('description')}>{this.state.project.description}</textarea>
               {/* <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/> */}
