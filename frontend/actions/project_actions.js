@@ -30,8 +30,8 @@ export const createProject = (project) => dispatch => (
   )
 );
 
-export const searchAllProjects = (keywords) => dispatch => (
-  SearchAPIUtil.search(keywords).then(payload => dispatch(receiveAllProjects(payload)))
+export const searchAllProjects = (query) => dispatch => (
+  SearchAPIUtil.search(query).then(payload => dispatch(receiveAllProjects(payload)))
 )
 
 
@@ -39,7 +39,9 @@ const receiveErrors = (errors) => ({
   type: RECEIVE_PROJECT_ERRORS,
   errors: errors.responseJSON
 });
+// const receiveSearchProjects(payload)({
 
+// })
 const modifiedProject = (project) => ({
   type: MODIFY_PROJECT,
   project

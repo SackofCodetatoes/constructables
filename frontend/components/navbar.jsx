@@ -5,17 +5,27 @@ import { Link } from 'react-router-dom'
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      search: ""
-    };
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = { search: this.props.search }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   updateSearch() {
-    return e => this.setState({
-      search: e.currentTarget.value
-    })
+    let nextState = Object.assign({}, this.state.search)
+    return e => {
+      nextState['keywords'] = e.currentTarget.value;
+      return this.setState({
+      search: nextState
+      });
+    };
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    // debugger
+    const search = Object.assign({}, this.state.search);
+    this.props.processSearch(search);
+  }
+
   render() {
     //console.log(this.props);
     return (
@@ -23,7 +33,7 @@ class NavBar extends React.Component {
         <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>
         <div className='search-bar'><input onChange={this.updateSearch()} 
           className='search-bar-field'type='text' 
-          value={this.state.search} placeholder='Lets craft ...'/><button className='search-bar-button clickable'>Q</button></div>
+          value={this.state.search.keywords} placeholder='Lets craft ...'/><button onClick={this.handleSubmit} className='search-bar-button clickable'>Q</button></div>
         <Link className='a-link project-button' to='/api/projects/'><button className='projects-button'>Projects</button></Link>
         <ProfileContainer />
 

@@ -3,9 +3,7 @@ class Api::SearchController < ApplicationController
     @projects = Project.all.select do |project|
       project.title.downcase.include?(search_params[:keywords].downcase)
     end
-    # debugger
-    render "api/search/index"
-    # render json: @projects
+    render 'api/projects/index'
   end
 
   private
