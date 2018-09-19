@@ -18,9 +18,9 @@
 }
 .logo {
   position: absolute;
-  left: 3%;
-  bottom: -3px;
-  width: 193px;
+  left: 40px;
+  bottom: 4px;
+  width: 240px;
   height: 72px;
   z-index: 2;
 }

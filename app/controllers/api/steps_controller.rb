@@ -10,6 +10,11 @@ class Api::StepsController < ApplicationController
     end
   end
 
+  def show
+    @step = Step.find(params[:id])
+    render 'show.html.erb'
+  end
+
   def update
     @step = Step.find(params[:id])
     if @step.update(step_params)

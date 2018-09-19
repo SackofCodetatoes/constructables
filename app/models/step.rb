@@ -15,4 +15,6 @@ class Step < ApplicationRecord
   validates :project_id, :title, :body, :step_index, presence: true
   
   belongs_to :project
+
+  has_one_attached :photo
 end
