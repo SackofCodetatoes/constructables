@@ -1,5 +1,5 @@
 .form-page {
-  background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
+  background: url(https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/orig.jpg) fixed;
   background-size: cover;
   background-attachment: fixed;
   z-index: -3;
@@ -21,7 +21,7 @@
   position: absolute;
   width: 400px;
   /* background: inherit; */
-  background: url(http://www.wellwallpapers.com/wallspic/big/4/43673_city-wallpaper-hd.jpg) fixed;
+  background: url(https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/orig.jpg) fixed;
 
   overflow: hidden;
 }
