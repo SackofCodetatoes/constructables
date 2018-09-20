@@ -6,10 +6,14 @@ class ProjectIndex extends React.Component {
   constructor(props){
     super(props);
     this.state = {loading: true};
+
   }
   
   componentDidMount() {
-    this.props.fetchAllProjects().then(() => this.setState({loading: false}));
+    debugger
+    if (this.props.location.pathname == "/projects/"){
+      this.props.fetchAllProjects().then(() => this.setState({loading: false}));
+    }
   }
              
   render(){
@@ -17,11 +21,7 @@ class ProjectIndex extends React.Component {
       return null;
     }
     const { users } = this.props;
-    //               author={this.props.users[project.user_id].username}
-    // console.log(this.props);
 
-    
-    // console.log(users);
     let projects = this.props.projects.map(
       project => (
         <div className='project-item-box' key={project.id}>
@@ -38,6 +38,7 @@ class ProjectIndex extends React.Component {
     if(!this.props.users){
       return (<div>Loading...</div>)
     }
+
     return (
       <div className='project-index'>
         <div className='project-index-grid'>

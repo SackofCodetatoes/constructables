@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfileContainer from './profile/profile_container';
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class NavBar extends React.Component {
       this.setState({
         search: { keywords: '' }
       });
+      this.props.history.push('/projects/search');
       this.props.processSearch(search);
     }
 
@@ -38,7 +40,9 @@ class NavBar extends React.Component {
     this.setState({
       search: { keywords: '' }
     });
+    this.props.history.push('/projects/search')
     this.props.processSearch(search);
+    // this.props.processSearch(search);
 
     // .then((resp) => this.props.history.push(`/api/projects`))
   }
@@ -49,7 +53,7 @@ class NavBar extends React.Component {
       <div className='search-bar'><input onChange={this.updateSearch()}
         className='search-bar-field' type='text' onKeyDown={this.checkSearch}
         value={this.state.search.keywords} placeholder="Let's craft a ..." />
-        <Link className="on-top" to="/api/projects/"><button onClick={this.handleSubmit} className='search-bar-button clickable'>Q</button></Link>
+        <Link className="on-top" to="/projects/"><button onClick={this.handleSubmit} className='search-bar-button clickable'>Q</button></Link>
       </div>
     );
     // debugger
@@ -57,7 +61,7 @@ class NavBar extends React.Component {
       <nav className="navbar">
         <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>
         { renderSearchBar() }
-        <Link className='a-link project-button' to='/api/projects/'><button className='projects-button'>Projects</button></Link>
+        <Link className='a-link project-button' to='/projects/'><button className='projects-button'>Projects</button></Link>
         <ProfileContainer />
 
       </nav>
@@ -65,4 +69,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

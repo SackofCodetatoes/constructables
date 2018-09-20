@@ -23,9 +23,9 @@ const App = () => (
       </header>
 
       <Switch>
-        <Route exact path="/api/projects/" component={ProjectIndexContainer} />
+        <Route exact path="/projects/" component={ProjectIndexContainer} />
         <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
-        {/* <Route exact path="/search/" component={ProjectIndexContainer} /> */}
+        <Route exact path="/projects/search/" component={ProjectIndexContainer} />
         <Route exact path="/new/project/" component={ProjectNewFormContainer} />
         <Route exact path="/edit/project/:projectId" component={ProjectEditFormContainer} />
         <Route exact path="/" component={Splash} />
