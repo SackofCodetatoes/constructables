@@ -29,6 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
 
-  
   ReactDOM.render(<Root store={store} />, root);
 });

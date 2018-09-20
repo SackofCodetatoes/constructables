@@ -8,10 +8,8 @@ class ProjectIndex extends React.Component {
     this.state = {loading: true};
 
   }
-  
   componentDidMount() {
-    debugger
-    if (this.props.location.pathname == "/projects/"){
+    if (this.props.location.pathname == "/projects/" || this.props.location.pathname == "/projects" ){
       this.props.fetchAllProjects().then(() => this.setState({loading: false}));
     }
   }

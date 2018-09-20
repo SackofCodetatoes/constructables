@@ -9,6 +9,7 @@ class NavBar extends React.Component {
     this.state = { search: this.props.search }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkSearch = this.checkSearch.bind(this);
+    this.projectsIndex = this.projectsIndex.bind(this);
   }
   
 
@@ -42,9 +43,10 @@ class NavBar extends React.Component {
     });
     this.props.history.push('/projects/search')
     this.props.processSearch(search);
-    // this.props.processSearch(search);
-
-    // .then((resp) => this.props.history.push(`/api/projects`))
+  }
+  projectsIndex(){
+    this.props.fetchAllProjects();
+    this.props.history.push('/projects/');
   }
 
   render() {
@@ -61,7 +63,9 @@ class NavBar extends React.Component {
       <nav className="navbar">
         <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>
         { renderSearchBar() }
-        <Link className='a-link project-button' to='/projects/'><button className='projects-button'>Projects</button></Link>
+          <div className='a-link project-button' to='/projects/' >
+            <button onClick={this.projectsIndex} className='projects-button'>Projects</button>
+          </div>
         <ProfileContainer />
 
       </nav>
