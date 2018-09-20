@@ -29,6 +29,7 @@ class ProjectIndex extends React.Component {
             author={users[project.user_id] ? users[project.user_id].username : 'loading..'}
             title={project.title}
             authorId={project.user_id}
+            image={project.image}
           />
         </div>
        )

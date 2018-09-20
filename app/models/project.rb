@@ -15,6 +15,7 @@ class Project < ApplicationRecord
 
   belongs_to :user
   has_many :steps
+  has_one_attached :photo
     # foreign_key: 'project_id',
     # classname: "Step"
   # has_many :comments 
