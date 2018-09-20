@@ -12,6 +12,7 @@ json.steps do
       json.body step.body
       json.step_index step.step_index
       json.project_id step.project_id
+      json.image step.photo.attached? ? url_for(step.photo) : ''
     end
   end
 end
