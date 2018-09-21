@@ -16,7 +16,9 @@ export const createProject = (project) => (
   $.ajax({
     method: 'POST',
     url: `api/projects`,
-    data: { project }
+    data: project,
+    contentType: false,
+    processData: false 
   })
 )
 
@@ -30,6 +32,8 @@ export const updateProject = (project) => (
   $.ajax({
     method: 'PATCH',
     url: `api/projects/${project.id}`,
-    data: { project } 
+    data: project,
+    contentType: false,
+    processData: false
   })
 )

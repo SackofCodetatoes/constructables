@@ -17,7 +17,12 @@ class ProjectForm extends React.Component {
   update(field) {
     let nextProject = Object.assign({}, this.state.project);
     return e => {
-      nextProject[field] = e.currentTarget.value;
+      if(field === 'photo'){
+        nextProject[field] = e.currentTarget.files[0];
+      }
+      else {
+        nextProject[field] = e.currentTarget.value;
+      }
       return this.setState({
         project: nextProject
       });
@@ -68,20 +73,30 @@ class ProjectForm extends React.Component {
       </ul>
     );
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
-    const project = Object.assign({}, { 
-      title: this.state.project.title, 
-      description: this.state.project.description,
-      user_id: this.state.project.user_id,
-      id: this.state.project.id
-    });
+    const projectFormData = new FormData();
+    projectFormData.append('project[title]', this.state.project.title);
+    projectFormData.append('project[description]', this.state.project.description);
+    projectFormData.append('project[user_id]', this.state.project.user_id);
+    // if(this.props.formType === 'edit'){
+      projectFormData.append('project[id]', this.state.project.id);
+    // }
+    // debugger
+    projectFormData.append('project[photo]', this.state.project.photo);
+
+    // const project = Object.assign({}, { 
+    //   title: this.state.project.title, 
+    //   description: this.state.project.description,
+    //   user_id: this.state.project.user_id,
+    //   id: this.state.project.id
+    // });
 
     //resp has payload.project.id
     // let outerRef = 'replaceme';
     // debugger
-    this.props.processForm(project).
+    this.props.processForm(projectFormData).
       then(resp => {
         let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.props.project.id;
         for(let i = 0; i < Object.keys(this.state.steps).length; i++){
@@ -112,6 +127,7 @@ class ProjectForm extends React.Component {
 
 
   render() {
+    console.log(this.state);
     const renderSteps = () => {
       const steps = this.state.steps;
       return (
@@ -134,6 +150,7 @@ class ProjectForm extends React.Component {
             <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
             <div className="project-form-project" >
               { this.renderErrors() }
+              <input type="file" className="image-upload-button" accept="image/png, image/jpeg" onChange={this.update('photo')}/>
               <input type="textarea" className='project-form-title' onChange={this.update('title')} value={this.state.project.title} placeholder="What's your project called?" /><br/>
               <textarea className='project-form-body' rows="4" cols='50' placeholder="Describe your project!"onChange={this.update('description')}>{this.state.project.description}</textarea>
               {/* <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/> */}

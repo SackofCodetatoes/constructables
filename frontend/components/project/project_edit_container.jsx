@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     title: '',
     description: '',
     user_id: state.session.id,
+    photo: null,
   } 
   const defaultSteps = {};
 
