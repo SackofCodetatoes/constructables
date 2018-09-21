@@ -12,12 +12,14 @@ class ProjectForm extends React.Component {
     this.addStep = this.addStep.bind(this);
     this.updateStep = this.updateStep.bind(this);
     this.deleteStep = this.deleteStep.bind(this);
+    this.newPhoto = false;
   } 
 
   update(field) {
     let nextProject = Object.assign({}, this.state.project);
     return e => {
       if(field === 'photo'){
+        this.newPhoto = true;
         nextProject[field] = e.currentTarget.files[0];
       }
       else {
@@ -84,7 +86,10 @@ class ProjectForm extends React.Component {
       projectFormData.append('project[id]', this.state.project.id);
     // }
     // debugger
-    projectFormData.append('project[photo]', this.state.project.photo);
+    if (this.newPhoto){
+      console.log('halp');
+      projectFormData.append('project[photo]', this.state.project.photo);
+    }
 
     // const project = Object.assign({}, { 
     //   title: this.state.project.title, 

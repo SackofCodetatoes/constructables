@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
   const defaultSteps = {};
 
   const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
+  project.photo = null;
   const steps =  state.entities.steps || defaultSteps;
   const errors = state.errors.project;
   const formType = 'edit';
