@@ -52,6 +52,7 @@
   background-color: orange;
   padding: 10px 20px 10px 20px;
   /* position: absolute; */
+  z-index: 2;
   position: absolute;
   right: 60px;
 }

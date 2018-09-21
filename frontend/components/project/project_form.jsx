@@ -87,7 +87,6 @@ class ProjectForm extends React.Component {
     // }
     // debugger
     if (this.newPhoto){
-      console.log('halp');
       projectFormData.append('project[photo]', this.state.project.photo);
     }
 
@@ -108,19 +107,36 @@ class ProjectForm extends React.Component {
           //if formtype conditiona; 'new' v edit, set project id if new 
           //new : resp payload
           //edit : this.steps[i].project_id
-          let step = Object.assign({}, {
-            title: this.state.steps[i].title,
-            body: this.state.steps[i].body,
-            step_index: i,
-            id: this.state.steps[i].id,
-            project_id: projectId
-          });
 
-          if(step.id === undefined){
-            console.log('step id is undefined');
-            delete step['id'];
-            this.props.newStep(step);
-          } else this.props.editStep(step);
+          let stepFormData = new FormData();
+          stepFormData.append('step[title]', this.state.steps[i].title);
+          stepFormData.append('step[body]', this.state.steps[i].body);
+          stepFormData.append('step[step_index]', i);
+          stepFormData.append('step[project_id]', projectId);
+
+          // let step = Object.assign({}, {
+          //   title: this.state.steps[i].title,
+          //   body: this.state.steps[i].body,
+          //   step_index: i,
+          //   id: this.state.steps[i].id,
+          //   project_id: projectId
+          // });
+
+          if(this.state.steps[i].id === undefined){
+            // stepFormData.append('step[id]', this.state.steps[i].id);
+            this.props.newStep(stepFormData);
+          } 
+          else {
+            // debugger
+            stepFormData.append('step[id]', this.state.steps[i].id);
+            this.props.editStep(stepFormData);
+          }
+          
+            // if(step.id === undefined){
+          //   console.log('step id is undefined');
+          //   delete step['id'];
+          //   this.props.newStep(step);
+          // } else this.props.editStep(step);
         };
         this.props.history.push(`/api/projects/${projectId}`)
       })
@@ -138,6 +154,8 @@ class ProjectForm extends React.Component {
       return (
          Object.values(this.state.steps).map((step, index) => 
             <div className="step-form-container" key={index}>
+            
+              <input type="file" className="image-upload-button" accept="image/png, image/jpeg" onChange={this.updateStep(index, 'photo')} />
               <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Enter a step title!' value={step.title}/><br/>
               <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} placeholder="What do you do in this step?" value={step.body} ></textarea>
               {/* <input  type='text' className='project-form-body' onChange={this.updateStep(index, 'body')} value={step.body}/>  */}
