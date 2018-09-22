@@ -46,9 +46,18 @@ class ProjectForm extends React.Component {
 
   updateStep(stepIndex, stepField) {
     let nextStep = this.state.steps;
+    const that = this;
     return e => {
-      nextStep[stepIndex][stepField] = e.currentTarget.value;//possible problem with keying in
-      return this.setState({
+      if (stepField === 'photo') {
+        // this.newPhoto = true;
+        debugger
+        console.log('nextstep', nextStep)
+        console.log(e.currentTarget.files)
+        nextStep[stepIndex].photo = e.currentTarget.files[0];
+      } else {
+        nextStep[stepIndex][stepField] = e.currentTarget.value;//possible problem with keying in
+      }
+      return that.setState({
         steps: nextStep
       });
     };
@@ -58,7 +67,7 @@ class ProjectForm extends React.Component {
     e.preventDefault();
     let nextSteps = this.state.steps;
     // nextSteps.push({title: '', body: ''});
-    nextSteps[Object.keys(nextSteps).length] = { title: '', body: '' };
+    nextSteps[Object.keys(nextSteps).length] = { title: '', body: '', photo: null };
     this.setState({
       steps: nextSteps
     });
@@ -86,7 +95,7 @@ class ProjectForm extends React.Component {
       projectFormData.append('project[id]', this.state.project.id);
     // }
     // debugger
-    if (this.newPhoto){
+    if (!(this.state.project.photo === null)){
       projectFormData.append('project[photo]', this.state.project.photo);
     }
 
@@ -114,6 +123,13 @@ class ProjectForm extends React.Component {
           stepFormData.append('step[step_index]', i);
           stepFormData.append('step[project_id]', projectId);
 
+          // if (!(this.state.steps[i].photo === null)) {
+            // console.log('added');
+            stepFormData.append('step[photo]', this.state.steps[i].photo);
+          // }
+          debugger
+          console.log(this.state.steps[i]);
+
           // let step = Object.assign({}, {
           //   title: this.state.steps[i].title,
           //   body: this.state.steps[i].body,
@@ -127,7 +143,6 @@ class ProjectForm extends React.Component {
             this.props.newStep(stepFormData);
           } 
           else {
-            // debugger
             stepFormData.append('step[id]', this.state.steps[i].id);
             this.props.editStep(stepFormData);
           }
@@ -140,7 +155,6 @@ class ProjectForm extends React.Component {
         };
         this.props.history.push(`/api/projects/${projectId}`)
       })
-      // debugger
 
 
   }

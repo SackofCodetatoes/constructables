@@ -16,7 +16,7 @@ class Api::StepsController < ApplicationController
   end
 
   def update
-    # debugger
+    debugger
     @step = Step.find(params[:step][:id])
     if @step.update(step_params)
       render json: 'GoodWork'
@@ -30,6 +30,6 @@ class Api::StepsController < ApplicationController
 
   private 
     def step_params
-      params.require(:step).permit(:title, :body, :project_id, :step_index, :id)
+      params.require(:step).permit(:title, :body, :project_id, :step_index, :id, :photo)
     end
 end

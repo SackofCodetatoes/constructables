@@ -16,6 +16,11 @@ const mapStateToProps = (state, ownProps) => {
   const project = state.entities.projects[ownProps.match.params.projectId] || defaultProject;
   project.photo = null;
   const steps =  state.entities.steps || defaultSteps;
+  if(Object.keys(steps).length > 0){
+    for(let i = 0; i < Object.keys(steps).length; i++){
+      steps[i].photo = null;
+    }
+  }
   const errors = state.errors.project;
   const formType = 'edit';
   const currentUserId = state.session.id;
