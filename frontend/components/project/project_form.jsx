@@ -13,6 +13,7 @@ class ProjectForm extends React.Component {
     this.updateStep = this.updateStep.bind(this);
     this.deleteStep = this.deleteStep.bind(this);
     this.newPhoto = false;
+    this.handleStepImages = this.handleStepImages.bind(this);
   } 
 
   update(field) {
@@ -49,19 +50,19 @@ class ProjectForm extends React.Component {
     const that = this;
     return e => {
       if (stepField === 'photo') {
-        // this.newPhoto = true;
-        debugger
-        console.log('nextstep', nextStep)
-        console.log(e.currentTarget.files)
         nextStep[stepIndex].photo = e.currentTarget.files[0];
       } else {
         nextStep[stepIndex][stepField] = e.currentTarget.value;//possible problem with keying in
       }
+      
+      console.log('updated step: ', nextStep);
+      
       return that.setState({
         steps: nextStep
       });
     };
   }
+
 // <StepContainer onChange={this.updateStep(this.state.steps.length)} />
   addStep(e) {
     e.preventDefault();
@@ -73,6 +74,8 @@ class ProjectForm extends React.Component {
     });
     // console.log(this.state);
   }
+
+
   renderErrors() {
     return (
       <ul className="project-form-errors">
@@ -84,59 +87,52 @@ class ProjectForm extends React.Component {
       </ul>
     );
   }
-  
+
+  handleStepImages(){
+    console.log(this.state.projectId);
+    this.props.history.push(`/api/projects/${this.state.projectId}`);
+
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+    // debugger
     const projectFormData = new FormData();
     projectFormData.append('project[title]', this.state.project.title);
     projectFormData.append('project[description]', this.state.project.description);
     projectFormData.append('project[user_id]', this.state.project.user_id);
-    // if(this.props.formType === 'edit'){
-      projectFormData.append('project[id]', this.state.project.id);
-    // }
-    // debugger
+    projectFormData.append('project[id]', this.state.project.id);
+    
     if (!(this.state.project.photo === null)){
       projectFormData.append('project[photo]', this.state.project.photo);
     }
 
-    // const project = Object.assign({}, { 
-    //   title: this.state.project.title, 
-    //   description: this.state.project.description,
-    //   user_id: this.state.project.user_id,
-    //   id: this.state.project.id
-    // });
 
-    //resp has payload.project.id
-    // let outerRef = 'replaceme';
-    // debugger
-    this.props.processForm(projectFormData).
+      this.props.processForm(projectFormData).
       then(resp => {
         let projectId = this.props.formType === 'new' ? resp.payload.project.id : this.props.project.id;
+        this.setState({
+          projectId: projectId,
+        })
         for(let i = 0; i < Object.keys(this.state.steps).length; i++){
           //if formtype conditiona; 'new' v edit, set project id if new 
           //new : resp payload
           //edit : this.steps[i].project_id
+          console.log('whatdo', this.state.steps[0].photo);
+          
+        let stepFormData = new FormData();
+        stepFormData.append('step[title]', this.state.steps[i].title);
+        stepFormData.append('step[body]', this.state.steps[i].body);
+        stepFormData.append('step[step_index]', i);
+        stepFormData.append('step[project_id]', projectId);
+        
+        // debugger
+          if (!(this.state.steps[i].photo === null)) {
+            // debugger
+            this.handleStepImages();
+            // stepFormData.append('step[photo]', this.state.steps[i].photo);
+          }
 
-          let stepFormData = new FormData();
-          stepFormData.append('step[title]', this.state.steps[i].title);
-          stepFormData.append('step[body]', this.state.steps[i].body);
-          stepFormData.append('step[step_index]', i);
-          stepFormData.append('step[project_id]', projectId);
-
-          // if (!(this.state.steps[i].photo === null)) {
-            // console.log('added');
-            stepFormData.append('step[photo]', this.state.steps[i].photo);
-          // }
-          debugger
-          console.log(this.state.steps[i]);
-
-          // let step = Object.assign({}, {
-          //   title: this.state.steps[i].title,
-          //   body: this.state.steps[i].body,
-          //   step_index: i,
-          //   id: this.state.steps[i].id,
-          //   project_id: projectId
-          // });
 
           if(this.state.steps[i].id === undefined){
             // stepFormData.append('step[id]', this.state.steps[i].id);
@@ -146,15 +142,35 @@ class ProjectForm extends React.Component {
             stepFormData.append('step[id]', this.state.steps[i].id);
             this.props.editStep(stepFormData);
           }
-          
-            // if(step.id === undefined){
-          //   console.log('step id is undefined');
-          //   delete step['id'];
-          //   this.props.newStep(step);
-          // } else this.props.editStep(step);
-        };
-        this.props.history.push(`/api/projects/${projectId}`)
-      })
+
+        };//end of for loop
+
+      }).then(() => {
+        this.handleStepImages();
+      });
+      for(let i = 0; i < Object.keys(this.state.steps).length; i++){
+        let stepFormData = new FormData();
+        stepFormData.append('step[title]', this.state.steps[i].title);
+        stepFormData.append('step[body]', this.state.steps[i].body);
+        stepFormData.append('step[step_index]', i);
+        stepFormData.append('step[project_id]', this.state.steps[i].project_id);
+
+        if (!(this.state.steps[i].photo === null)) {
+          console.log('photo attached');
+          stepFormData.append('step[photo]', this.state.steps[i].photo);
+        }
+
+        if (this.state.steps[i].id === undefined) {
+          // stepFormData.append('step[id]', this.state.steps[i].id);
+          this.props.newStep(stepFormData);
+        }
+        else {
+          stepFormData.append('step[id]', this.state.steps[i].id);
+          this.props.editStep(stepFormData);
+        }
+      }
+    //   debugger
+    // this.props.history.push(`/api/projects/${this.state.project.id}`);
 
 
   }
@@ -162,7 +178,7 @@ class ProjectForm extends React.Component {
 
 
   render() {
-    console.log(this.state);
+
     const renderSteps = () => {
       const steps = this.state.steps;
       return (

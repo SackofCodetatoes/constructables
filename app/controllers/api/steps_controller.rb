@@ -16,7 +16,7 @@ class Api::StepsController < ApplicationController
   end
 
   def update
-    debugger
+    # debugger
     @step = Step.find(params[:step][:id])
     if @step.update(step_params)
       render json: 'GoodWork'
