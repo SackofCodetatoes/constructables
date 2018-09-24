@@ -13,14 +13,14 @@ class ProjectShow extends React.Component {
   
   renderSteps(steps) {
     let renSteps = [];
-
+    // debugger
     for (let i = 0; i < Object.keys(steps).length; i++) {
       renSteps.push(
       <li className="project-step-item" key={i}>
         <div className="project-step-container">
           {/* <img src={`${steps[i].image}`}/> */}
-          {this.imageCheck(steps[i].image)}
           <h3 className='project-step-title'>Step {i+1}: {steps[i].title}</h3>
+          {this.imageCheck(steps[i].image)}
           <p className='project-step-description'>{steps[i].body}</p>
         </div>
       </li>);

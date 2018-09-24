@@ -62,12 +62,15 @@
   margin-top: 10px;
   margin-left: 30px;
   margin-bottom: 5px;
+  text-align: left;
 }
 .project-step-container {
-  margin: 10px;
+  margin: 40px;
   padding: 10px 0px 10px 0px;
+  text-align: center;
 }
 
 .step-image {
-  width: 20%;
+  min-width: 400px;
+  border-radius: 5px;
 }

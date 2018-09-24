@@ -40,14 +40,22 @@
 .project-index-text {
   /* border-top: 1px solid #bbb; */
   border-bottom: 1px solid #eee;
-  align-items: center; 
+  align-items: left; 
   height: 80px;
   margin-bottom: 27px;
 }
 .project-index-text {
   list-style: none;
+  background-color: #F8F8F8;
   padding: 20px;
 }
 .project-index-title {
   font-weight: 700;
+  color: black;
+}
+.project-index-author{
+  color: black;
+}
+.project-index-text, .project-index-author {
+  text-align: left;
 }

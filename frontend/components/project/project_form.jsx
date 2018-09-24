@@ -115,11 +115,7 @@ class ProjectForm extends React.Component {
           projectId: projectId,
         })
         for(let i = 0; i < Object.keys(this.state.steps).length; i++){
-          //if formtype conditiona; 'new' v edit, set project id if new 
-          //new : resp payload
-          //edit : this.steps[i].project_id
-          console.log('whatdo', this.state.steps[0].photo);
-          debugger
+
           
         let stepFormData = new FormData();
         stepFormData.append('step[title]', this.state.steps[i].title);
@@ -129,7 +125,6 @@ class ProjectForm extends React.Component {
         
         // debugger
           if (!(this.state.steps[i].photo === null)) {
-            debugger
             // this.handleStepImages();
             stepFormData.append('step[photo]', this.state.steps[i].photo);
           }
@@ -149,7 +144,7 @@ class ProjectForm extends React.Component {
       }).then(() => {
         this.handleStepImages();
       });
-      //workaround
+            // workaround for editing
       // for(let i = 0; i < Object.keys(this.state.steps).length; i++){
       //   let stepFormData = new FormData();
       //   stepFormData.append('step[title]', this.state.steps[i].title);
@@ -162,18 +157,15 @@ class ProjectForm extends React.Component {
       //     stepFormData.append('step[photo]', this.state.steps[i].photo);
       //   }
 
-      //   if (this.state.steps[i].id === undefined) {
-      //     // stepFormData.append('step[id]', this.state.steps[i].id);
-      //     this.props.newStep(stepFormData);
-      //   }
-      //   else {
+      //   // if (this.state.steps[i].id === undefined) {
+      //   //   // stepFormData.append('step[id]', this.state.steps[i].id);
+      //   //   this.props.newStep(stepFormData);
+      //   // }
+      //   if(this.state.steps[i].id != undefined) {
       //     stepFormData.append('step[id]', this.state.steps[i].id);
       //     this.props.editStep(stepFormData);
       //   }
       // }
-
-    //   debugger
-    // this.props.history.push(`/api/projects/${this.state.project.id}`);
 
 
   }
@@ -191,7 +183,6 @@ class ProjectForm extends React.Component {
               <input type="file" className="image-upload-button" accept="image/png, image/jpeg" onChange={this.updateStep(index, 'photo')} />
               <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Enter a step title!' value={step.title}/><br/>
               <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} placeholder="What do you do in this step?" value={step.body} ></textarea>
-              {/* <input  type='text' className='project-form-body' onChange={this.updateStep(index, 'body')} value={step.body}/>  */}
               <button onClick={() => this.deleteStep(index)} className= "remove-step-button rounded clickable">x</button>
             </div>
           )
@@ -209,7 +200,6 @@ class ProjectForm extends React.Component {
               <input type="file" className="image-upload-button" accept="image/png, image/jpeg" onChange={this.update('photo')}/>
               <input type="textarea" className='project-form-title' onChange={this.update('title')} value={this.state.project.title} placeholder="What's your project called?" /><br/>
               <textarea className='project-form-body' rows="4" cols='50' placeholder="Describe your project!"onChange={this.update('description')}>{this.state.project.description}</textarea>
-              {/* <input type="text" onChange={this.update('description')} value={this.state.project.description} placeholder="Project Description"/> */}
             </div>
           </form>
 
@@ -221,5 +211,4 @@ class ProjectForm extends React.Component {
     );
   }
 }
-// { this.state.steps.map((step) => <h1>howdy</h1>) }
 export default ProjectForm;
