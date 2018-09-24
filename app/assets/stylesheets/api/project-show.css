@@ -29,9 +29,7 @@
   font-size: 36px;
   font-weight: 700; 
 }
-.project-description {
-  /* align-self: flex-start; */
-}
+
 .project-options {
   position: absolute;
   right: 70px;
@@ -53,6 +51,11 @@
 }
 .project-description {
   margin-top: 15px;
+  margin-left: 60px;
+  margin-bottom: 5px;
+  margin-right: 60px;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .project-show-steps {
@@ -62,6 +65,8 @@
   margin-top: 10px;
   margin-left: 30px;
   margin-bottom: 5px;
+  line-height: 1.5;
+
   text-align: left;
 }
 .project-step-container {

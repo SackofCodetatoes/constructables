@@ -70,10 +70,37 @@ Step.create(project_id: 8, title: "Serve!", body: "You're done, assuming that yo
 
 
 
-# user 8, project 8
+# user 8, project 9
 User.create(username: 'Filler', email: "philler@ert.com", password: 'pambeesly', age: 21)
 
+Project.create(title: "How to be an effective salesman, according to my boss", description: "I've been studying my boss for years and I have condensed what I've learned into a very valuable chart. While at first may seem bad, which it actually is, actually holds some interesting nuggets of truth.", user_id:7)
+Step.create(project_id: 9, title: "Procrastinate", body: "I've noticed my boss tends to defer all major responsibilities. I know this may sound crazy, especially in a managing position, but he does in fact procrastinate. I've spent a lot of time wondering how this can be an effective strategy or how It's even possible to procrastinate for 6 out of the 8 hours of the workday but what this effectively means is he doesn't have to worry. He knows his business and he is effective when he goes out and does his job. Not everyone might like him for procstinating, but when the time comes, he gets the job done. Albeit it, the decisions he makes could benefit from some more thought", step_index: 0)
+Step.create(project_id: 9, title: "Distract Others", body: "Another major thing I've noticed is his ability to distract others. It's almost like a need to be praised by others, even when it's very clear, nobody will praise him. This costs the company time by holding unneccessary meetings about random things in the office and at some points puts a halt on the entire workday. It's not very efficient and despite all the distractions, we all manage to output more sales than any other branch in our company. Maybe it has to do with the fact that we're always behind and constantly need to catch up, or maybe we're all hoping to make enough to get out of here. One thing or another, it oddly works.", step_index: 1)
+Step.create(project_id: 9, title: "Critical Thinking", body: "Now this is a minor one, but big. He doesn't do this often but when he does, amazing things do happen. Our boss has a philosophy that business isn't about sales. No, no, no. It's about the people. It's about building a personal connection with our clients and providing clients care and a personal touch which brings them back, time and time again. Anyone can take your money for a product. But not everyone can connect and bring you what you're looking for. Especially not in a time of technology.", step_index: 2)
 
+# user 9, project 10
+User.create(username: 'Not-really-NZXT', email: "nzxt@nzxt.com", password: 'pcmasterrace', age: 21)
+Project.create(title: "Video Card Installation", description: "Video card installation is one of the easiest aspects of build assembly. Unlike CPU installs, the video card does not have the same type of fragile (and easily bent) pins in its socket. Before starting, for clarity, there is a technical differentiation that should be made.", user_id: 9)
+Step.create(project_id: 10, title: "Placement", body: "If your motherboard has multiple PCI Express (PCI-e) slots and you’re considering a multi-GPU or multi-PCIe device configuration, check the motherboard manual to determine which slots are ideal for your specific assortment of devices. Some boards will “multiplex” PCI-e lanes using special chips (called PEX/PLX chips) to get more performance out of devices. In such an instance, you’ll want to make sure you’re getting full use out of that option.", step_index: 0)
+Step.create(project_id: 10, title: "Spacing", body: "Determine how many case expansion slots the video card takes. You can do this by lining-up the card in the PCI Express (PCI-e) slot on the motherboard. The most common count is two slots, but some cards will take “2.5” (or even three – though that is exceedingly rare); low-end devices might take only one expansion slot.", step_index: 1)
+Step.create(project_id: 10, title: "Open up space", body: "Remove the screws holding the expansion slot in place.", step_index: 2)
+Step.create(project_id: 10, title: "Open up more space", body: "Remove the expansion bay covers. You may keep them in a separate box for storage or toss them. They are functionally useless for the remainder of our process, unless you need to repackage the case for some reason (like to sell to a friend in the event you later upgrade).", step_index: 3)
+
+Step.create(project_id: 10, title: "Prep placement", body: "Line the video card’s PCI-e pins and “shoe” up with the slot it’s going into. Like RAM, you’ll here a slight “click” once the card is pressed into place. Use light pressure through the thumbs to mount the video card. If too much force is required, stop and inspect to determine what’s causing the resistance. It may be improperly aligned or there may be a cable in the way.", step_index: 4)
+Step.create(project_id: 10, title: "Insertion", body: "If the device uses multiple expansion slots, re-install all of those screws to mount it. Using both (in the event of a two-slot card) screws will significantly reduce “GPU sag,” or the act of the video card weighing itself down in a fashion which makes it un-level.", step_index: 5)
+Step.create(project_id: 10, title: "Post installation", body: "After installing, give the video card a slight wiggle to make sure it’s not going anywhere. Ensure the PCI-e slot’s shoe popped into place and is now locked (in the “up” position). Some motherboards, like some of the high-end X99 boards, do not use this same locking mechanism. If that is the case, look at the pins to ensure that they are fully socketed into the PCI-e slot.", step_index: 6)
+
+
+
+
+User.create(username: 'Filler2', email: "phi33r@ert.com", password: 'pambeesly', age: 21)
+User.create(username: 'nextpariticipent', email: "p22ler@ert.com", password: 'pambeesly', age: 21)
+
+# user user 11, project 11
+
+
+
+# template
 # User.create(username: '', email: "", password: '', age: 21)
 # Project.create(title: "", description: "", user_id: 4)
 # Step.create(project_id: 4, title: "", body: "", step_index: 0)
