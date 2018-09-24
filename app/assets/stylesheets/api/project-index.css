@@ -43,6 +43,7 @@
   align-items: left; 
   height: 80px;
   margin-bottom: 27px;
+  line-height: 1.5;
 }
 .project-index-text {
   list-style: none;
