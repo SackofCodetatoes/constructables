@@ -119,6 +119,7 @@ class ProjectForm extends React.Component {
           //new : resp payload
           //edit : this.steps[i].project_id
           console.log('whatdo', this.state.steps[0].photo);
+          debugger
           
         let stepFormData = new FormData();
         stepFormData.append('step[title]', this.state.steps[i].title);
@@ -128,9 +129,9 @@ class ProjectForm extends React.Component {
         
         // debugger
           if (!(this.state.steps[i].photo === null)) {
-            // debugger
-            this.handleStepImages();
-            // stepFormData.append('step[photo]', this.state.steps[i].photo);
+            debugger
+            // this.handleStepImages();
+            stepFormData.append('step[photo]', this.state.steps[i].photo);
           }
 
 
@@ -148,27 +149,29 @@ class ProjectForm extends React.Component {
       }).then(() => {
         this.handleStepImages();
       });
-      for(let i = 0; i < Object.keys(this.state.steps).length; i++){
-        let stepFormData = new FormData();
-        stepFormData.append('step[title]', this.state.steps[i].title);
-        stepFormData.append('step[body]', this.state.steps[i].body);
-        stepFormData.append('step[step_index]', i);
-        stepFormData.append('step[project_id]', this.state.steps[i].project_id);
+      //workaround
+      // for(let i = 0; i < Object.keys(this.state.steps).length; i++){
+      //   let stepFormData = new FormData();
+      //   stepFormData.append('step[title]', this.state.steps[i].title);
+      //   stepFormData.append('step[body]', this.state.steps[i].body);
+      //   stepFormData.append('step[step_index]', i);
+      //   stepFormData.append('step[project_id]', this.state.steps[i].project_id);
 
-        if (!(this.state.steps[i].photo === null)) {
-          console.log('photo attached');
-          stepFormData.append('step[photo]', this.state.steps[i].photo);
-        }
+      //   if (!(this.state.steps[i].photo === null)) {
+      //     console.log('photo attached');
+      //     stepFormData.append('step[photo]', this.state.steps[i].photo);
+      //   }
 
-        if (this.state.steps[i].id === undefined) {
-          // stepFormData.append('step[id]', this.state.steps[i].id);
-          this.props.newStep(stepFormData);
-        }
-        else {
-          stepFormData.append('step[id]', this.state.steps[i].id);
-          this.props.editStep(stepFormData);
-        }
-      }
+      //   if (this.state.steps[i].id === undefined) {
+      //     // stepFormData.append('step[id]', this.state.steps[i].id);
+      //     this.props.newStep(stepFormData);
+      //   }
+      //   else {
+      //     stepFormData.append('step[id]', this.state.steps[i].id);
+      //     this.props.editStep(stepFormData);
+      //   }
+      // }
+
     //   debugger
     // this.props.history.push(`/api/projects/${this.state.project.id}`);
 

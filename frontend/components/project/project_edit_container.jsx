@@ -18,7 +18,7 @@ const mapStateToProps = (state, ownProps) => {
   const steps =  state.entities.steps || defaultSteps;
   if(Object.keys(steps).length > 0){
     for(let i = 0; i < Object.keys(steps).length; i++){
-      steps[i].photo = ""
+      steps[i].photo = null
     }
   }
   const errors = state.errors.project;
