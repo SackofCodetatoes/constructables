@@ -39,3 +39,9 @@
 .hidden {
   display: none;
 }
+.username {
+  color: rgb(53, 53, 73);
+}
+.username:hover {
+  cursor: no-drop;
+}

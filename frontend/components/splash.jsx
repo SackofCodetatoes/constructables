@@ -27,37 +27,39 @@ class Splash extends React.Component {
     else {
       // return (<div>???</div>)
       return (
-        <div className='project-index'>
-          <div className='project-index-grid'>
-            <div className='project-item-box' key={1}>
-              <ProjectIndexItem
-                key={1}
-                projectId={5}
-                author={"Michael Scott"}
-                title={this.state.projects["5"].title}
-                authorId={this.state.projects["5"].user_id}
-                image={this.state.projects["5"].image}
-              />
-            </div>
-            <div className='project-item-box' key={2}>
-              <ProjectIndexItem
-                key={2}
-                projectId={13}
-                author={"PUBG_Corp"}
-                title={this.state.projects["13"].title}
-                authorId={this.state.projects["13"].user_id}
-                image={this.state.projects["13"].image}
-              />
-            </div>
-            <div className='project-item-box' key={3}>
-              <ProjectIndexItem
-                key={3}
-                projectId={10}
-                author={"Not-really-NZXT"}
-                title={this.state.projects["10"].title}
-                authorId={this.state.projects["10"].user_id}
-                image={this.state.projects["10"].image}
-              />
+        <div className="splash-index">
+          <div className='project-index'>
+            <div className='project-index-grid'>
+              <div className='project-item-box' key={1}>
+                <ProjectIndexItem
+                  key={1}
+                  projectId={5}
+                  author={"Michael Scott"}
+                  title={this.state.projects["5"].title}
+                  authorId={this.state.projects["5"].user_id}
+                  image={this.state.projects["5"].image}
+                />
+              </div>
+              <div className='project-item-box' key={2}>
+                <ProjectIndexItem
+                  key={2}
+                  projectId={13}
+                  author={"PUBG_Corp"}
+                  title={this.state.projects["13"].title}
+                  authorId={this.state.projects["13"].user_id}
+                  image={this.state.projects["13"].image}
+                />
+              </div>
+              <div className='project-item-box' key={3}>
+                <ProjectIndexItem
+                  key={3}
+                  projectId={10}
+                  author={"Not-really-NZXT"}
+                  title={this.state.projects["10"].title}
+                  authorId={this.state.projects["10"].user_id}
+                  image={this.state.projects["10"].image}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -74,7 +76,7 @@ class Splash extends React.Component {
       <div className='splash-page'>
         <div className="splash-text">Start crafting today!</div>
         <Link onClick={() => window.scrollTo(0, 0)} to='/projects/' className='clickable'><img className="splash" src={temp} alt="Start Constructing Today!"/></Link>
-        <div>Selected few</div>
+        <div className="splash-divider"><span className='username'>SiteAdmin</span> Suggested Select</div>
         {this.selectedProjectsIndex()}
       </div>
 

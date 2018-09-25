@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(username: 'demo', email: "demo@demo.com", password: 'password', age: 21)
 Project.create(title: "Project: Rad", description: "One Rad Project that combines all the awesome projects into one.", user_id: 1)
-Step.create(project_id: 1, title: 'Acquire materials', body: 'some filler text should go here', step_index: 0)
-Step.create(project_id: 1, title: 'use amterials', body: 'some filler text should go here!!!!!', step_index: 1)
+Step.create(project_id: 1, title: 'Acquire materials', body: 'All we need is a satirical composition of all projects that are or had once been pretty rad, and combine them together. We can use some sort of radical device to rad them together. Perhaps like a laser, like a radeon.', step_index: 0)
+Step.create(project_id: 1, title: 'use Materials', body: 'Once We radded them together, we continue the process until our device is the most rad device one can possible come to imagine.', step_index: 1)
 
 User.create(username: 'Alfred', email: "demo2@demo.com", password: 'password', age: 21)
 Project.create(title: "Basket Weaving", description: "A tutorial about basketweaving for the uninitiated. Now wait! Before you say' why would i ever need to learn how to basket weave', its not a very useful trait, i ask you when is a basket not handy?", user_id: 1)

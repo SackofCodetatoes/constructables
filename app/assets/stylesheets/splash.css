@@ -22,3 +22,12 @@
   text-shadow: 2px 2px 10px gray;
   font-size: 75px;
 }
+
+.splash-divider {
+  margin: 20px;
+  margin-bottom: 0;
+}
+.splash-index {
+  margin: 20px;
+  margin-bottom: 50px;
+}
