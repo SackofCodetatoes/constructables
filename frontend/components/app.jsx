@@ -39,12 +39,12 @@ const App = () => (
     <div className='footer-container'>
       <label className="footer-text">Created by Jason Wong<br />Inspired By Instructables</label>
       <div className="social-media">
-        <div className='rounded-logo'>
+          <a href="https://github.com/SackofCodetatoes/constructables" target="_blank" className='rounded-logo'>
             <img className='github-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/stylesheets/api/github-logo.png" alt="Link to GitHub" />
-        </div>
-        <div className='square-logo'>
+        </a>
+          <a href="https://www.linkedin.com/in/jason-c-wong/" target="_blank" className='square-logo'>
           <img className='linkedin-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/linkedin.png" alt="Link to LinkedIn"/>
-        </div>
+        </a>
       </div>
     </div>
     </footer>
