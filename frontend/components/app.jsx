@@ -36,11 +36,16 @@ const App = () => (
 
     </div>
     <footer className="footer">
+    <div className='footer-container'>
       <div className="social-media">
-        <img className='github-logo' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/stylesheets/api/github-logo.png" alt=""/>
-        {/* <div>Icons made by <a href="https://www.flaticon.com/authors/dave-gandy" title="Dave Gandy">Dave Gandy</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> */}
-        <img className='linkedin-logo' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/linkedin.png" alt=""/>
+        <div className='rounded-logo'>
+            <img className='github-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/stylesheets/api/github-logo.png" alt="Link to GitHub" />
+        </div>
+        <div className='square-logo'>
+          <img className='linkedin-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/linkedin.png" alt="Link to LinkedIn"/>
+        </div>
       </div>
+    </div>
     </footer>
 
     

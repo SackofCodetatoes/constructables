@@ -47,12 +47,34 @@
   cursor: no-drop;
 }
 .linkedin-logo, .github-logo {
+  width: 100%;
+  /* margin: 20px; */
+}
+.linkedin-logo:hover, .github-logo:hover {
+  filter: invert(100%);
+}
+.rounded-logo, .square-logo {
+  display: inline-block;
+  /* border: 1px solid red; */
   width: 64px;
+  height: 64px;
   margin: 20px;
 }
+.rounded-logo {
+  border-radius: 200px;
+}
+.square-logo {
+  border-radius: 15px;
+}
+
+.rounded-logo:hover, .square-logo:hover {
+  box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
+  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1); */
+}
+
+.footer-container {
+  width: 100%;
+}
 .social-media {
-  justify-content: right;
-  justify-items: right;
-  /* right: 25px; */
-  /* bottom: 25px; */
+  text-align: right;
 }
