@@ -35,7 +35,10 @@ const App = () => (
       </Switch>
 
     </div>
-    <footer className="footer"></footer>
+    <footer className="footer">
+      <img src="" alt=""/>
+      <img src="" alt=""/>
+    </footer>
 
     
   </div>
