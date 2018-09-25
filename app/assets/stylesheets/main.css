@@ -58,7 +58,7 @@
   /* border: 1px solid red; */
   width: 64px;
   height: 64px;
-  margin: 20px;
+  margin: 15px;
 }
 .rounded-logo {
   border-radius: 200px;
@@ -74,7 +74,11 @@
 
 .footer-container {
   width: 100%;
+  height: 100%;
 }
 .social-media {
   text-align: right;
+  position: relative;
+  bottom: -40px;
+  right: 15px;
 }
