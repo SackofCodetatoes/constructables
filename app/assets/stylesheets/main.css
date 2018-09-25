@@ -45,3 +45,6 @@
 .username:hover {
   cursor: no-drop;
 }
+.linkedin-logo, .github-logo {
+  width: 64px;
+}
