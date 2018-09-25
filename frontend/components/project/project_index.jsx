@@ -34,6 +34,11 @@ class ProjectIndex extends React.Component {
         </div>
        )
     );
+    if (projects.length === 0){
+      projects = (
+        <div> No Projects Found </div>
+      );
+    }
     if(!this.props.users){
       return (<div>Loading...</div>)
     }

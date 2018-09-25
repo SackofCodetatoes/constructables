@@ -1,7 +1,9 @@
 class Api::SearchController < ApplicationController 
   def index
     @projects = Project.all.select do |project|
-      project.title.downcase.include?(search_params[:keywords].downcase)
+      words = search_params[:keywords].split(' ')
+      # project.title.downcase.include?(search_params[:keywords].downcase)
+      !(project.title.downcase.split(' ') & words).empty?
     end
     render 'api/projects/index'
   end

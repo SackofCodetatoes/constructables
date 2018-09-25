@@ -19,8 +19,12 @@ class Splash extends React.Component {
       users: resp.users
     });
   }
+  
 
   selectedProjectsIndex(){
+    const inlineStyle = {
+      minHeight: '0px',
+    }
     if(this.state === null){
       return (<div>well shucks</div>);
     }
@@ -28,7 +32,7 @@ class Splash extends React.Component {
       // return (<div>???</div>)
       return (
         <div className="splash-index">
-          <div className='project-index'>
+          <div className='project-index' style={inlineStyle}>
             <div className='project-index-grid'>
               <div className='project-item-box' key={1}>
                 <ProjectIndexItem

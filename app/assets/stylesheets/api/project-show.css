@@ -6,9 +6,8 @@
   text-align: left;
   /* text-align: center; */
   margin: 25px;
-  
-
 }
+
 .project-header, .project-step-title {
   text-align: center;
 }
@@ -77,5 +76,7 @@
 
 .step-image {
   min-width: 400px;
+  max-width: 95%;
   border-radius: 5px;
+  margin: 20px;
 }

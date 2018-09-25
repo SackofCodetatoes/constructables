@@ -33,11 +33,13 @@ class ProjectShow extends React.Component {
       return <img className='step-image' src={`${url}`} />
     } 
   }
+  
 
   render() {
     const { project } = this.props;
     const { user } = this.props;
     const { steps } = this.props;
+    // debugger
     const renderProjectOptions = () => {
       if(this.props.currentUserId === project.user_id ) {
         return (
@@ -64,6 +66,7 @@ class ProjectShow extends React.Component {
           <div className='project-header'>
               <h2 className='project-title' >{project.title}</h2>
               <label>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</label><br/>
+              {this.imageCheck(project.image)}
               <p className='project-description'> {project.description}</p>
           </div>
           <ul className="project-show-steps">
