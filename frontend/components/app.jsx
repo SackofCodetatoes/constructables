@@ -37,6 +37,7 @@ const App = () => (
     </div>
     <footer className="footer">
     <div className='footer-container'>
+      <label className="footer-text">Created by Jason Wong<br />Inspired By Instructables</label>
       <div className="social-media">
         <div className='rounded-logo'>
             <img className='github-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/stylesheets/api/github-logo.png" alt="Link to GitHub" />
