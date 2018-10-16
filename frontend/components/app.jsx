@@ -20,7 +20,15 @@ const App = () => (
     <div className='content'>
       <header>
         <NavBarContainer />
-        <div className="spacer"> <span className= 'motto'>A guide to anything!</span> </div>
+        <div className="spacer">
+          <ul className="row-list">
+            <li className='row-item'>Classes</li>
+            <li className='row-item'>Contests</li>
+            <li className='row-item'>Community</li>
+            <li className='row-item'>Teachers</li>
+          </ul> 
+          <span className= 'motto'>A guide to anything!</span>
+        </div>
       </header>
 
       <Switch>

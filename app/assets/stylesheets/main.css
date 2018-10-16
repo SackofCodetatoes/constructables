@@ -73,14 +73,20 @@
   position: relative;
   bottom: -60px;
   /* text-align: center; */
-  
-  
-  
 }
 
 .rounded-logo:hover, .square-logo:hover {
   box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.5);
   /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1); */
+}
+.row-item {
+  display: inline;
+  margin: 15px;
+}
+.row-list {
+  margin-left: 5%;
+  font-size: 14px;
+  color: #777;
 }
 
 .footer-container {
@@ -93,4 +99,7 @@
   position: relative;
   bottom: 0px;
   right: 15px;
+}
+.row-item:hover {
+  cursor: no-drop;
 }
