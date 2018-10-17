@@ -44,17 +44,37 @@ const App = () => (
 
     </div>
     <footer className="footer">
-    <div className='footer-container'>
-      <label className="footer-text">Created by Jason Wong<br />Inspired By Instructables</label>
-      <div className="social-media">
-          <a href="https://github.com/SackofCodetatoes/constructables" target="_blank" className='rounded-logo'>
-            <img className='github-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/stylesheets/api/github-logo.png" alt="Link to GitHub" />
-        </a>
-          <a href="https://www.linkedin.com/in/jason-c-wong/" target="_blank" className='square-logo'>
-          <img className='linkedin-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/linkedin.png" alt="Link to LinkedIn"/>
-        </a>
+      <div className='footer-container'>
+        <div className="footer-item categories-item">
+          <label className="category-label">Categories</label>
+          <ul className="footer-categories">
+            <li>Technology</li>
+            <li>Workshop</li>
+            <li>Craft</li>
+            <li>Home</li>
+            <li>Food</li>
+            <li>Play</li>
+            <li>Outside</li>
+            <li>Costumes</li>
+          </ul>
+          {/* <ul></ul> */}
+        </div>
+        <div className="footer-item">
+          <label>About</label>
+          <label className="footer-text ">Created by Jason Wong<br />Inspired By Instructables</label>
+        </div>
+        <div className="social-media footer-item">
+          <label className="category-label">Connect</label>
+          <div className="social-media-container">
+            <a href="https://www.linkedin.com/in/jason-c-wong/" target="_blank" className='square-logo'>
+              <img className='linkedin-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/linkedin.png" alt="Link to LinkedIn"/>
+            </a>
+            <a href="https://github.com/SackofCodetatoes/constructables" target="_blank" className='rounded-logo'>
+                <img className='github-logo clickable' src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/stylesheets/api/github-logo.png" alt="Link to GitHub" />
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
     </footer>
 
     
