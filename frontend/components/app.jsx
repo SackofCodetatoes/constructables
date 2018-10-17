@@ -67,7 +67,7 @@ const App = () => (
         <div className="footer-item-div">
           <label className="category-label">About</label>
           <div className="footer-item">
-            <label className="footer-text ">Created by Jason Wong<br />Inspired By Instructables</label>
+            <label className="footer-text ">Created by Jason Wong<br/>Inspired By Instructables</label>
           </div>
         </div>
 
