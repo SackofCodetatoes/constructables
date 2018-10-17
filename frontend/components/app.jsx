@@ -49,14 +49,14 @@ const App = () => (
           <label className="category-label">Categories</label>
           <div className="footer-item categories-item">
             <ul className="footer-categories">
-              <li>Technology</li>
-              <li>Workshop</li>
-              <li>Craft</li>
-              <li>Home</li>
-              <li>Food</li>
-              <li>Play</li>
-              <li>Outside</li>
-              <li>Costumes</li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/circuit-board.png" /> <label className="category-text">Technology</label></li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/open-wrench-tool-silhouette.png"></img> <label className="category-text">Workshop</label></li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/scissors.png"></img> <label className="category-text">Craft</label></li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/home.png"></img> <label className="category-text">Home</label></li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/dinner.png"></img> <label className="category-text">Food</label></li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/paper-plane.png"></img> <label className="category-text">Play</label></li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/bicycle.png"></img> <label className="category-text">Outside</label></li>
+              <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/mask.png"></img> <label className="category-text">Costumes</label></li>
             </ul>
           </div>
         </div>
