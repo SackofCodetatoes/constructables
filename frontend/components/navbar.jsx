@@ -17,7 +17,7 @@ class NavBar extends React.Component {
     if(event.key == 'Enter') {
       const search = Object.assign({}, this.state.search);
       this.setState({
-        search: { keywords: '' }
+        search: { keywords: '', type: 'keyword' }
       });
       this.props.history.push('/projects/search');
       this.props.processSearch(search);

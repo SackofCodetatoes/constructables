@@ -8,6 +8,7 @@ import { searchAllProjects, fetchAllProjects } from '../actions/project_actions'
 const mapStateToProps = (state, ownProps) => {
   const search = {
     keywords: '',
+    type: ''
   }
 
   return { search }

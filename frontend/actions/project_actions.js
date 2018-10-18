@@ -32,8 +32,11 @@ export const createProject = (project) => dispatch => (
 
 export const searchAllProjects = (query) => dispatch => (
   SearchAPIUtil.search(query).then(payload => dispatch(receiveAllProjects(payload)))
-)
+);
 
+export const fetchUserProjects = (userId) => dispatch => (
+  SearchAPIUtil.search(userId).then(payload => dispatch(receiveAllProjects(payload)))
+);
 
 const receiveErrors = (errors) => ({
   type: RECEIVE_PROJECT_ERRORS,
