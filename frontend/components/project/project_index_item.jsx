@@ -20,6 +20,7 @@ class ProjectIndexItem extends React.Component {
   }
 
   render() {
+    // debugger
     return (
       <div className='project-item'>
         <div className='project-image-container'>
@@ -28,11 +29,16 @@ class ProjectIndexItem extends React.Component {
           </Link>
         </div>
         <div className='project-index-text'>
-          <Link onClick={() => window.scrollTo(0, 0)} to={`/api/projects/${this.props.projectId}`}>
             <li>
-              <label className="project-index-title">{this.props.title}</label><br /><label className="project-index-author">by <span className='username'>{this.props.author}</span></label>
+              <Link onClick={() => window.scrollTo(0, 0)} to={`/api/projects/${this.props.projectId}`}>
+                <label className="project-index-title">{this.props.title}</label><br />
+              </Link>
             </li>
-          </Link>
+          <label className="project-index-author">by 
+            <Link onClick={() => window.scrollTo(0,0)} to={`/user/${this.props.authorId}`}>
+               <span className='username'>{this.props.author}</span>
+            </Link>
+          </label>
         </div>
       </div>
       );
