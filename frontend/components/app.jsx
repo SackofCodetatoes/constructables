@@ -11,6 +11,7 @@ import ProjectShowContainer from './project/project_show_container';
 import Switch from '../../node_modules/react-router-dom/Switch';
 import ProjectNewFormContainer from './project/project_new_container';
 import ProjectEditFormContainer from './project/project_edit_container';
+import ProfilePageContainer from './profile/profile_page_container';
 import Splash from "./splash"
 import SplashContainer from './splash_container';
 
@@ -33,6 +34,7 @@ const App = () => (
 
       <Switch>
         <Route exact path="/projects/" component={ProjectIndexContainer} />
+        <Route exact path="/user/:userId" component={ProfilePageContainer} />
         <Route exact path="/api/projects/:projectId" component={ProjectShowContainer}/>
         <Route exact path="/projects/search/" component={ProjectIndexContainer} />
         <Route exact path="/new/project/" component={ProjectNewFormContainer} />

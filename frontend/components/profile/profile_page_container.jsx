@@ -1,14 +1,16 @@
 import ProfilePage from './profile_page';
 import { connect } from 'react-redux';
-import { searchAllProjects } from '../actions/project_actions';
+import { searchAllProjects } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  // debugger
+  //refresh doesnt work, get request for user name
   const search = {
-    keywords: '',
+    keywords: parseInt(ownProps.match.params.userId),
     type: 'userProjects',
   }
-
-  return { search }
+  let author = state.entities.users[parseInt(ownProps.match.params.userId)];
+  return { search: search, author: author }
 };
 
 const mapDispatchToProps = dispatch => ({
