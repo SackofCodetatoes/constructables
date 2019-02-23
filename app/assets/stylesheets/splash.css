@@ -17,7 +17,8 @@
 .splash-text {
   position: absolute;
   color: #eee;
-  left: 50px;
+  left: 20%;
+  right: 20%;
   top: 450px;
   text-shadow: 2px 2px 10px gray;
   font-size: 75px;

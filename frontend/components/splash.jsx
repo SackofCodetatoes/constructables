@@ -78,7 +78,7 @@ class Splash extends React.Component {
     
     return (
       <div className='splash-page'>
-        <div className="splash-text">Start crafting today!</div>
+        <span className="splash-text">Start crafting today!</span>
         <Link onClick={() => window.scrollTo(0, 0)} to='/projects/' className='clickable'><img className="splash" src={temp} alt="Start Constructing Today!"/></Link>
         <div className="splash-divider"><span className='username'>SiteAdmin</span> Suggested Select</div>
         {this.selectedProjectsIndex()}
