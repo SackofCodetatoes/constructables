@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProjectIndexItem from './project/project_index_item';
+
 class Splash extends React.Component {
   constructor(){
     super();
@@ -80,7 +81,7 @@ class Splash extends React.Component {
       <div className='splash-page'>
         <span className="splash-text">Start crafting today!</span>
         <Link onClick={() => window.scrollTo(0, 0)} to='/projects/' className='clickable'><img className="splash" src={temp} alt="Start Constructing Today!"/></Link>
-        <div className="splash-divider"><span className='username'>SiteAdmin</span> Suggested Select</div>
+        <div className="splash-divider"> ★ Featured Projects</div>
         {this.selectedProjectsIndex()}
       </div>
 

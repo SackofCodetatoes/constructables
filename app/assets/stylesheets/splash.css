@@ -5,6 +5,7 @@
   height: 700;
   font-family: 'Roboto',
   sans-serif;
+  background-color: #f5f5f5;
   
   /* background-image: url("https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") */
 }
@@ -13,6 +14,7 @@
   object-fit: cover;
   height: 600px;
   width: 100%;
+  box-shadow: grey 1px 1px 1px
 }
 .splash-text {
   position: absolute;
@@ -25,9 +27,14 @@
 }
 
 .splash-divider {
-  margin: 20px;
   margin-bottom: 0;
+  padding: 30px;
+  padding-top: 40px;
+  margin-top: -2px;
+  font-size: 20px;
+  text-align: left;
 }
+
 .splash-index {
   margin: 20px;
   margin-bottom: 50px;
