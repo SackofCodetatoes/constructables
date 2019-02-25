@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   text-align: left;
   /* text-align: center; */
   margin: 25px;
+
 }
 
 .project-header, .project-step-title {
@@ -65,9 +66,13 @@
   margin-left: 30px;
   margin-bottom: 5px;
   line-height: 1.5;
-
   text-align: left;
 }
+.project-step-description, .project-description{
+  font-size: 18px;
+  line-height: 2;
+}
+
 .project-step-container {
   margin: 40px;
   padding: 10px 0px 10px 0px;
@@ -79,4 +84,11 @@
   max-width: 95%;
   border-radius: 5px;
   margin: 20px;
+}
+
+.step-divider{
+  color: #e5e5e5;
+}
+.project-step-item{
+  text-align: center;
 }

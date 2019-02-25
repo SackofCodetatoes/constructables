@@ -23,6 +23,7 @@ class ProjectShow extends React.Component {
           {this.imageCheck(steps[i].image)}
           <p className='project-step-description'>{steps[i].body}</p>
         </div>
+          <span className="step-divider">______________</span>
       </li>);
     }
     return renSteps;
@@ -68,7 +69,9 @@ class ProjectShow extends React.Component {
               <label>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</label><br/>
               {this.imageCheck(project.image)}
               <p className='project-description'> {project.description}</p>
+          <span className="step-divider">______________</span>
           </div>
+
           <ul className="project-show-steps">
             {this.renderSteps(steps)}
           </ul>
