@@ -31,9 +31,13 @@
 .project-title {
   font-size: 36px;
   font-weight: 700; 
+  padding: 15px;
 }
 .project-title, .project-title-sub{
   text-align: center;
+}
+.project-title-sub{
+  font-size: 20px;
 }
 
 .project-options {
