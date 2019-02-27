@@ -35,9 +35,9 @@ class ProjectIndexItem extends React.Component {
               </Link>
             </li>
           <label className="project-index-author">by 
-            <Link onClick={() => window.scrollTo(0,0)} to={`/user/${this.props.authorId}`}>
+            {/* <Link onClick={() => window.scrollTo(0,0)} to={`/user/${this.props.authorId}`}> */}
                <span className='username'>{this.props.author}</span>
-            </Link>
+            {/* </Link> */}
           </label>
         </div>
       </div>
