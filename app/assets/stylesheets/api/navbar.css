@@ -19,9 +19,9 @@
 .logo {
   position: absolute;
   left: 40px;
-  bottom: 4px;
+  bottom: 9px;
   width: 240px;
-  height: 72px;
+  /* height: 72px; */
   z-index: 2;
 }
 .search-bar {
