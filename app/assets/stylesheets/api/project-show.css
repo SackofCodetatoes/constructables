@@ -17,6 +17,7 @@
 .project-step-title {
   font-weight: 700;
   font-size: 20px;
+  margin: 25px;
 }
 .project-show-container {
   word-wrap: break-word;
@@ -67,19 +68,22 @@
   margin-top: 15px;
 }
 .project-step-description {
-  margin-top: 10px;
-  margin-left: 30px;
-  margin-bottom: 5px;
+  /* margin-top: 10px; */
+  /* margin-left: 30px; */
+  /* margin-bottom: 5px; */
   line-height: 1.5;
   text-align: left;
 }
 .project-step-description, .project-description{
   font-size: 18px;
   line-height: 2;
+  margin: auto;
+  font-size: 20px;
+  width: 77%;
 }
 
 .project-step-container {
-  margin: 40px;
+  /* margin: 40px; */
   padding: 10px 0px 10px 0px;
   text-align: center;
 }
