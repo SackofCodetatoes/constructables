@@ -87,8 +87,8 @@
   border-radius: 5px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  border-bottom: #ccc;
-  box-shadow: 0px 2px 0px 1px lightgrey;
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0px 0px 1px #efefef;
 }
 
 

@@ -192,7 +192,7 @@ class ProjectForm extends React.Component {
     return (
       <div className="project-form-page" key='5'>
         <div className="project-form-container">
-          <div className='project-form-header'><img></img><buttom>Text</buttom></div>
+          <div className='project-form-header'><img></img><buttom>New Project</buttom></div>
           <form className="project-form">
             <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
             <div className="project-form-project" >
