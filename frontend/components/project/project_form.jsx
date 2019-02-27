@@ -179,7 +179,6 @@ class ProjectForm extends React.Component {
       return (
          Object.values(this.state.steps).map((step, index) => 
             <div className="step-form-container" key={index}>
-            
               <input type="file" className="image-upload-button" accept="image/png, image/jpeg" onChange={this.updateStep(index, 'photo')} />
               <label >Step {index + 1}: </label><input className='project-form-title'type="text" onChange={this.updateStep(index, 'title')} placeholder='Enter a step title!' value={step.title}/><br/>
               <textarea className='project-form-body' rows="4" cols='50' onChange={this.updateStep(index, 'body')} placeholder="What do you do in this step?" value={step.body} ></textarea>
@@ -193,6 +192,7 @@ class ProjectForm extends React.Component {
     return (
       <div className="project-form-page" key='5'>
         <div className="project-form-container">
+          <div className='project-form-header'><img></img><buttom>Text</buttom></div>
           <form className="project-form">
             <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
             <div className="project-form-project" >
