@@ -191,3 +191,8 @@
 .category-text:hover {
   cursor: no-drop;
 }
+
+@media (min-width: 730px){
+
+  
+}

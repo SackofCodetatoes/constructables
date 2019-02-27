@@ -21,7 +21,7 @@
 }
 .project-show-container {
   word-wrap: break-word;
-  width: 67%;
+  /* width: 67%; */
   /* background-color: #fff; */
   border-radius: 5px;
   /* border: 1px solid black; */
@@ -83,7 +83,7 @@
   line-height: 2;
   margin: auto;
   font-size: 20px;
-  width: 77%;
+  /* width: 67%; */
 }
 
 .project-step-container {
@@ -105,3 +105,12 @@
 .project-step-item{
   text-align: center;
 }
+
+
+@media (min-width: 730px){
+  .project-step-description, .project-description{
+    width: 90%;
+    max-width: 1200px;
+  }
+}
+
