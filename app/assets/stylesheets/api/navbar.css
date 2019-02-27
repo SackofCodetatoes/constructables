@@ -92,7 +92,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  box-shadow: 0 2px 2px -2px gray;
+  box-shadow: 2px 2px 4px -2px gray;
   z-index: 1;
 }
 .profile-container span, .session-link {

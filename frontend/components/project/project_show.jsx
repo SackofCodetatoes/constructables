@@ -62,11 +62,11 @@ class ProjectShow extends React.Component {
 
     return (
       <div className='project-show-page'>
+      <h2 className='project-title' >{project.title}</h2>
+      <h3 className='project-title-sub'>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</h3>
       { renderProjectOptions() }
         <div className='project-show-container'>
           <div className='project-header'>
-              <h2 className='project-title' >{project.title}</h2>
-              <label>By {user[project.user_id] ? user[project.user_id].username : 'loading..'}</label><br/>
               {this.imageCheck(project.image)}
               <p className='project-description'> {project.description}</p>
           <span className="step-divider">______________</span>

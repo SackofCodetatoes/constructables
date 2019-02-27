@@ -1,11 +1,13 @@
 .project-show-page {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   align-items: center;
   justify-content: left;
   text-align: left;
   /* text-align: center; */
-  margin: 25px;
+  /* margin: 25px; */
+  background-color: #fcfcfc;
+  padding: 25px;
 
 }
 
@@ -19,15 +21,18 @@
 .project-show-container {
   word-wrap: break-word;
   width: 67%;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 5px;
   /* border: 1px solid black; */
-  box-shadow: 0 0 2px #aaa;
+  /* box-shadow: 0 0 2px #aaa; */
   padding: 50px 20px 50px 20px ;
 }
 .project-title {
   font-size: 36px;
   font-weight: 700; 
+}
+.project-title, .project-title-sub{
+  text-align: center;
 }
 
 .project-options {
@@ -54,7 +59,7 @@
   margin-left: 60px;
   margin-bottom: 5px;
   margin-right: 60px;
-  text-align: center;
+  text-align: left;
   line-height: 1.5;
 }
 
