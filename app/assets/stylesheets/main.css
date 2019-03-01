@@ -192,7 +192,11 @@
   cursor: no-drop;
 }
 
+@media (min-width: 650px){
+  /* resize categories to two columns */
+}
+
 @media (min-width: 730px){
 
-  
+
 }
