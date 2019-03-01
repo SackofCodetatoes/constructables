@@ -62,10 +62,6 @@ const App = () => (
             </ul>
           </div>
         </div>
-
-        <div className="footer-item-div">
-
-        </div>
         <div className="footer-item-div">
           <label className="category-label">About</label>
           <div className="footer-item">
