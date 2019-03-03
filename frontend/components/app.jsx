@@ -48,7 +48,7 @@ const App = () => (
     <footer className="footer">
       <div className='footer-container'>
         <div className='footer-item-div'>
-          <label className="category-label">Categories</label>
+          <h3 className="category-label">Categories</h3>
           <div className="footer-item categories-item">
             <ul className="footer-categories">
               <li><img className="category-icon" src="https://raw.githubusercontent.com/SackofCodetatoes/constructables/master/app/assets/images/circuit-board.png" /> <label className="category-text">Technology</label></li>
@@ -63,14 +63,14 @@ const App = () => (
           </div>
         </div>
         <div className="footer-item-div">
-          <label className="category-label">About</label>
+          <h3 className="category-label">About</h3>
           <div className="footer-item">
             <label className="footer-text ">Created by Jason Wong<br/>Inspired By Instructables</label>
           </div>
         </div>
 
         <div className="footer-item-div">
-          <label className="category-label media-label">Connect</label>
+          <h3 className="category-label media-label">Connect</h3>
           <div className="social-media footer-item">
             <div className="social-media-container">
               <a href="https://www.linkedin.com/in/jason-c-wong/" target="_blank" className='square-logo'>
