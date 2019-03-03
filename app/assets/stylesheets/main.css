@@ -205,12 +205,14 @@
 }
 
 
+@media (min-width: 350px){
+  .footer-categories{
+    columns: 2;
+  }
+}
 
 @media (min-width: 730px){
   /* horizontal footer elements */
-  .footer-categories {
-    columns: 2;
-  }
   
   .footer-container {
     flex-direction: row;
