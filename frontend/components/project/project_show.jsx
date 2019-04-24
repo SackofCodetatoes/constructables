@@ -13,7 +13,6 @@ class ProjectShow extends React.Component {
   
   renderSteps(steps) {
     let renSteps = [];
-    // debugger
     for (let i = 0; i < Object.keys(steps).length; i++) {
       renSteps.push(
       <li className="project-step-item" key={i}>
@@ -40,7 +39,6 @@ class ProjectShow extends React.Component {
     const { project } = this.props;
     const { user } = this.props;
     const { steps } = this.props;
-    // debugger
     const renderProjectOptions = () => {
       if(this.props.currentUserId === project.user_id ) {
         return (
