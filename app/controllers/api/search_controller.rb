@@ -1,6 +1,6 @@
 class Api::SearchController < ApplicationController 
   def index
-    debugger
+    # debugger
     @projects = Project.all.select do |project|
       words = search_params[:keywords].split(' ')
       # project.title.downcase.include?(search_params[:keywords].downcase)
