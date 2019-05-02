@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { searchAllProjects } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   //refresh doesnt work, get request for user name
   const search = {
     keywords: parseInt(ownProps.match.params.userId),

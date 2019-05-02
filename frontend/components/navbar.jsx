@@ -58,7 +58,6 @@ class NavBar extends React.Component {
         <Link className="on-top" to="/projects/"><button onClick={this.handleSubmit} className='search-bar-button clickable'>Q</button></Link>
       </div>
     );
-    // debugger
     return (
       <nav className="navbar">
         <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>

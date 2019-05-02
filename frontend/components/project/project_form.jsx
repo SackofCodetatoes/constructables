@@ -96,7 +96,6 @@ class ProjectForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     const projectFormData = new FormData();
     projectFormData.append('project[title]', this.state.project.title);
     projectFormData.append('project[description]', this.state.project.description);
@@ -123,7 +122,6 @@ class ProjectForm extends React.Component {
         stepFormData.append('step[step_index]', i);
         stepFormData.append('step[project_id]', projectId);
         
-        // debugger
           if (!(this.state.steps[i].photo === null)) {
             // this.handleStepImages();
             stepFormData.append('step[photo]', this.state.steps[i].photo);

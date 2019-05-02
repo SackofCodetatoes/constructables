@@ -10,7 +10,6 @@ class ProjectIndexItem extends React.Component {
 
 //Project photo.attach(io: File.open(/pathname/), filename: 'filename')
   previewImage(){
-    // debugger
     if(this.props.image == ''){
       return this.defaultImage;
     }
@@ -20,7 +19,6 @@ class ProjectIndexItem extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className='project-item'>
         <div className='project-image-container'>
