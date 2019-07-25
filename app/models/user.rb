@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
   # has_one_attached :icon
   has_many :projects
+  has_many :comments
   # has_many :comments
 
   after_initialize :ensure_session_token

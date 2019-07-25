@@ -14,6 +14,7 @@ class Project < ApplicationRecord
   validates :user_id, :title, :description, presence: true;
 
   belongs_to :user
+  has_many :comments
   has_many :steps
   has_one_attached :photo
     # foreign_key: 'project_id',
