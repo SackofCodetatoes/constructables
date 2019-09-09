@@ -79,7 +79,26 @@ class Splash extends React.Component {
     return (
       <div className='splash-page'>
         <span className="splash-text">Start crafting today!</span>
-        <Link onClick={() => window.scrollTo(0, 0)} to='/projects/' className='clickable'><img className="splash" src={temp} alt="Start Constructing Today!"/></Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to='/projects/' className='clickable'>
+          
+          <img className="splash" src={temp} alt="Start Constructing Today!"/>
+        </Link>
+
+        <div className='splash-overview'>
+          <div>
+            <h2>Step-by-Step Instructions</h2>
+            <p>I make it easy to learn how to make anything, one step at a time. From the stovetop to the workshop, you are sure to be inspired by the awesome projects that are shared everyday.</p>
+          </div>
+          <div>
+            <h2>Made By You (and me)</h2>
+            <p>Instructables are created by you and me (mostly me). No matter who you are, we all have secret skills to share. Come join our community of curious makers, innovators, teachers, and life long learners who love to share what they make.</p>
+          </div>
+          <div>
+            <h2>For Educational Purposes</h2>
+            <p>Non-profit organization aiming to serve you your crafting needs while our heroku hours are up!</p>
+          </div>
+        </div>
+        <hr/>
         <div className="splash-divider"> ★ Featured Projects</div>
         {this.selectedProjectsIndex()}
       </div>
