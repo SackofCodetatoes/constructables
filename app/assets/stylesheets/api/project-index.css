@@ -5,9 +5,10 @@
 }
 .project-index-grid {
   margin: 40px 0 0 0;
-  max-width: 1660px;
   display: flex;
   flex-wrap: wrap;
+    max-width: 635px;
+
   justify-content: flex-start;
   /* adjust for different widths */
 }
@@ -68,3 +69,29 @@
 .project-index-text, .project-index-author {
   text-align: left;
 }
+
+@media(min-width: 710px) {
+  .project-index-grid{
+    max-width: 664px; 
+  }
+}
+
+@media(min-width: 1055px) {
+  .project-index-grid{
+    max-width: 996px;
+  }
+}
+
+@media(min-width: 1405px) {
+  .project-index-grid{
+    max-width: 1328px;
+  }
+}
+@media(min-width: 1750px) {
+  .project-index-grid{
+    max-width: 1660px;
+    
+  }
+}
+
+

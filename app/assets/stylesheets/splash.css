@@ -22,9 +22,9 @@
   color: #eee;
   left: 20%;
   right: 20%;
-  top: 450px;
+  top: 340px;
+  font-size: 48px;
   text-shadow: 2px 2px 10px gray;
-  font-size: 75px;
 }
 
 .splash-divider {
@@ -51,6 +51,8 @@ hr{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin: 0 15px 15px 15px;
+
   font-size: 20px;
 }
 
@@ -69,13 +71,25 @@ hr{
   .splash-overview{
     flex-direction: row;
     justify-content: space-evenly;
-
   }
   .splash-overview div{
     width: 300px;
     /* border: black 1px solid; */
   }
 }
+
+
+@media(min-width: 540px){
+  .splash-text{
+    font-size: 56px;
+  }
+
+@media(min-width: 1090px){
+  .splash-text{
+    font-size: 75px;
+  }
+}
+
 @media(min-width: 1370px){
   .splash-overview div{
     width: 380px;
