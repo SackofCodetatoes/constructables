@@ -33,6 +33,9 @@ class Splash extends React.Component {
       // return (<div>???</div>)
       return (
         <div className="splash-index">
+          <div className="splash-divider">
+            <h2>★ Featured Projects</h2>
+          </div>
           <div className='project-index' style={inlineStyle}>
             <div className='project-index-grid'>
               <div className='project-item-box' key={1}>
@@ -87,11 +90,11 @@ class Splash extends React.Component {
         <div className='splash-overview'>
           <div>
             <h2>Step-by-Step Instructions</h2>
-            <p>I make it easy to learn how to make anything, one step at a time. From the stovetop to the workshop, you are sure to be inspired by the awesome projects that are shared everyday.</p>
+            <p>We make it easy to learn how to make anything, one step at a time. From the stovetop to the workshop, you are sure to be inspired by the awesome projects that are shared everyday.</p>
           </div>
           <div>
-            <h2>Made By You (and me)</h2>
-            <p>Instructables are created by you and me (mostly me). No matter who you are, we all have secret skills to share. Come join our community of curious makers, innovators, teachers, and life long learners who love to share what they make.</p>
+            <h2>Made By You and me</h2>
+            <p>Instructables are created by you and me mostly me. No matter who you are, we all have secret skills to share. Come join our community of curious makers, innovators, teachers, and life long learners who love to share what they make.</p>
           </div>
           <div>
             <h2>For Educational Purposes</h2>
@@ -99,7 +102,7 @@ class Splash extends React.Component {
           </div>
         </div>
         <hr/>
-        <div className="splash-divider"> ★ Featured Projects</div>
+
         {this.selectedProjectsIndex()}
       </div>
 

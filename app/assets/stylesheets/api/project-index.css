@@ -1,18 +1,15 @@
 .project-index {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   min-height: 733px;
 }
 .project-index-grid {
-  margin-top: 40px;
-  width: 95%;
+  margin: 40px 0 0 0;
+  max-width: 1660px;
   display: flex;
-  justify-content: left;
   flex-wrap: wrap;
-  margin-bottom: 40px;
-  /* flex-direction: row;  */
+  justify-content: flex-start;
+  /* adjust for different widths */
 }
 .project-item-box {
   word-wrap: break-word;
@@ -20,6 +17,7 @@
   width: 300px;
   height: 362px;
   margin: 15px;
+  float: left;
 }
 .project-item-box:hover {
   box-shadow: 0 0 20px #ccc;

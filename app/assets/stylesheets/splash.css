@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: center;
   height: 700;
-  font-family: 'Roboto',
-  sans-serif;
+  line-height: 1.2;
+  /* font-family: 'Roboto', */
+  font-family: 'PT Sans', sans-serif;
   background-color: #f5f5f5;
   
   /* background-image: url("https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") */
@@ -27,13 +28,11 @@
 }
 
 .splash-divider {
-  margin-bottom: 0;
+  /* margin-bottom: 0;
   padding: 30px;
-  /* padding-top: 40px; */
-  /* margin-top: -2px; */
   font-size: 28px;
   text-align: left;
-  /* box-shadow: 0px 1px 0px 1px #e5e3e3; */
+  box-shadow: 0px 1px 0px 1px #e5e3e3; */
 }
 hr{
     border: 0;
@@ -51,9 +50,16 @@ hr{
 .splash-overview{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start
-  
+  justify-content: flex-start;
+  font-size: 20px;
 }
+
+.splash-overview h2{
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
 .splash-overview div{
   text-align: left;
   margin: 30px  0 30px 0;
@@ -67,18 +73,16 @@ hr{
   }
   .splash-overview div{
     width: 300px;
-    border: black 1px solid;
+    /* border: black 1px solid; */
   }
 }
 @media(min-width: 1370px){
   .splash-overview div{
     width: 380px;
-    border: black 1px solid;
   }
 }
 @media(min-width: 1600px){
   .splash-overview div{
     width: 480px;
-    border: black 1px solid;
   }
 }

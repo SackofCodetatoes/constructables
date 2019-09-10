@@ -28,7 +28,7 @@ const App = () => (
             <li className='row-item'>Community</li>
             <li className='row-item'>Teachers</li>
           </ul> 
-          <span className= 'motto'>A guide to anything!</span>
+          <span className= 'motto'>A guide for everything!</span>
         </div>
       </header>
 
