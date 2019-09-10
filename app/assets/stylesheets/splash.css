@@ -42,9 +42,13 @@ hr{
     background-color:grey;
     height: 1px;
 }
+
+hr.type2{
+  background-color: white;
+}
+
 .splash-index {
   margin: 0 20px 50px 20px;
-  /* margin-bottom: 50px; */
 }
 
 .splash-overview{
@@ -67,6 +71,8 @@ hr{
   margin: 30px  0 30px 0;
 }
 
+
+
 @media(min-width: 1040px){
   .splash-overview{
     flex-direction: row;
@@ -74,10 +80,8 @@ hr{
   }
   .splash-overview div{
     width: 300px;
-    /* border: black 1px solid; */
   }
 }
-
 
 @media(min-width: 540px){
   .splash-text{
