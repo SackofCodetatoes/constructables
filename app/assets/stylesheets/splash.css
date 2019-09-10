@@ -19,7 +19,7 @@
 }
 .splash-text {
   position: absolute;
-  color: #eee;
+  color: white;
   left: 20%;
   right: 20%;
   top: 340px;
@@ -28,6 +28,9 @@
 }
 
 .splash-divider {
+  font-size: 28px;
+  margin-left: 100px;
+  text-align: left;
   /* margin-bottom: 0;
   padding: 30px;
   font-size: 28px;
