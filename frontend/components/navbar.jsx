@@ -56,18 +56,30 @@ class NavBar extends React.Component {
         className='search-bar-field' type='text' onKeyDown={this.checkSearch}
         value={this.state.search.keywords} placeholder="Let's craft a ..." />
         <Link className="on-top" to="/projects/"><button onClick={this.handleSubmit} className='search-bar-button clickable'>Q</button></Link>
+        {/* <span className='motto'>A guide for everything!</span> */}
+        <div className='a-link project-button' to='/projects/' >
+          <button onClick={this.projectsIndex} className='projects-button'>Projects</button>
+        </div>
       </div>
     );
     return (
-      <nav className="navbar">
-        <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>
-        { renderSearchBar() }
-          <div className='a-link project-button' to='/projects/' >
-            <button onClick={this.projectsIndex} className='projects-button'>Projects</button>
-          </div>
-        <ProfileContainer />
+      <div>
+        <nav className="navbar">
+          <Link to='/' onClick={() => this.props.clearSessionErrors()}><img className="logo" src={window.logoUrl} /></Link>
 
-      </nav>
+          <ProfileContainer />
+        </nav>
+        <div className="spacer">
+          <ul className="row-list">
+            <li className='row-item'>Classes</li>
+            <li className='row-item'>Contests</li>
+            <li className='row-item'>Community</li>
+            <li className='row-item'>Teachers</li>
+          </ul>
+          { renderSearchBar() }
+        </div>
+
+      </div>
     );
   }
 }

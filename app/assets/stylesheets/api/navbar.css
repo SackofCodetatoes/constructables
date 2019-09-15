@@ -80,6 +80,7 @@
   /* position: absolute; */
   /* right: 60px; */
   /* top: 33px; */
+  margin: auto 0 auto 0;
 }
 
 .spacer {
@@ -120,7 +121,17 @@
   }
   .motto{
     margin: auto 10px auto 0;
-
   }
+}
 
+@media(min-width: 730px){
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+  }
+  .search-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }

@@ -21,15 +21,7 @@ const App = () => (
     <div className='content'>
       <header>
         <NavBarContainer />
-        <div className="spacer">
-          <ul className="row-list">
-            <li className='row-item'>Classes</li>
-            <li className='row-item'>Contests</li>
-            <li className='row-item'>Community</li>
-            <li className='row-item'>Teachers</li>
-          </ul> 
-          <span className= 'motto'>A guide for everything!</span>
-        </div>
+
       </header>
 
       <Switch>
