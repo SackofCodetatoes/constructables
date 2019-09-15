@@ -1,14 +1,14 @@
 .navbar {
-  height: 78px;
+  /* height: 78px;
   width: 100%;
   position: relative;
-  background-color: #eee;
   margin: 0;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
+  background-color: #eee;
   border-bottom: 1px solid #ddd;
 }
 .navbar > h1{
@@ -17,17 +17,17 @@
   float: left;
 }
 .logo {
-  position: absolute;
-  left: 40px;
-  bottom: 9px;
+  /* position: absolute; */
+  /* left: 40px; */
+  /* bottom: 9px; */
   width: 240px;
   /* height: 72px; */
-  z-index: 2;
+  /* z-index: 2; */
 }
 .search-bar {
-  position: absolute;
+  /* position: absolute;
   left: 340px;
-  bottom: 30%;
+  bottom: 30%; */
 }
 .search-bar-field:focus, .search-bar-button:focus {
   outline: none;
@@ -55,10 +55,10 @@
   background-color: #eee;
   border-radius: 5px; 
   /* color: #777; */
-  position: absolute;
-  left: 600px;
+  /* position: absolute; */
+  /* left: 600px; */
   padding: 10px 15px 10px 15px;
-  bottom: 30%;
+  /* bottom: 30%; */
 }
 
 .projects-button:hover, .logout-button:hover {
@@ -76,22 +76,23 @@
 .profile-container {
   /* justify-content: center; */
   padding: 10px;
-  float: right;
-  position: absolute;
-  right: 60px;
+  /* float: right; */
+  /* position: absolute; */
+  /* right: 60px; */
   /* top: 33px; */
 }
 
 .spacer {
-  position: relative;
+  /* position: relative; */
   background: #ffff;
-  display: inline-block;
-  height: 38px;
-  width: 100%;
+  /* display: inline-block; */
+  /* height: 38px; */
+  /* width: 100%; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: left;
+  /* justify-content: center; */
+  align-items: center;
+  /* text-align: left; */
   box-shadow: 2px 2px 4px -2px gray;
   z-index: 1;
 }
@@ -104,6 +105,22 @@
   padding: 2px;
 }
 .motto {
-  position: absolute;
-  right: 60px;
+  /* position: absolute; */
+  /* right: 60px; */
+  padding: 5px;
+}
+
+@media(min-width: 600px) {
+  .spacer{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .row-list{
+    display: flex;
+  }
+  .motto{
+    margin: auto 10px auto 0;
+
+  }
+
 }

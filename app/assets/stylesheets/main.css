@@ -18,7 +18,7 @@
 }
 
 .a-link{
-  max-width: 35px;
+  /* max-width: 35px; */
 }
 
 .footer {
@@ -86,11 +86,11 @@
   /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 1); */
 }
 .row-item {
-  display: inline;
+  /* display: inline; */
   margin: 15px;
 }
 .row-list {
-  margin-left: 5%;
+  /* margin-left: 5%; */
   font-size: 14px;
   color: #777;
 }

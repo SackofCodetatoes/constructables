@@ -22,9 +22,15 @@
   color: white;
   left: 20%;
   right: 20%;
-  top: 340px;
+  /* top: 340px; */
   font-size: 48px;
   text-shadow: 2px 2px 10px gray;
+}
+
+.splash-banner{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .splash-divider {

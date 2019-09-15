@@ -81,13 +81,13 @@ class Splash extends React.Component {
     
     return (
       <div className='splash-page'>
-        <span className="splash-text">
-          <hr className="type2" />
-        Start crafting today!
-        <hr className="type2" />
-        </span>
 
-        <Link onClick={() => window.scrollTo(0, 0)} to='/projects/' className='clickable'>
+        <Link onClick={() => window.scrollTo(0, 0)} to='/projects/' className='clickable splash-banner'>
+          <span className="splash-text">
+            <hr className="type2" />
+          Start crafting today!
+          <hr className="type2" />
+          </span>
           <img className="splash" src={temp} alt="Start Constructing Today!"/>
         </Link>
 
