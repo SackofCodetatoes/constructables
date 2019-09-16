@@ -38,7 +38,7 @@
   z-index: 5;
 }
 .on-top {
-  z-index: 5;
+  /* z-index: 5; */
 }
 .hidden {
   display: none;
