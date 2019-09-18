@@ -89,7 +89,7 @@ class ProjectForm extends React.Component {
   }
 
   handleStepImages(){
-    console.log(this.state.projectId);
+    // console.log(this.state.projectId);
     this.props.history.push(`/api/projects/${this.state.projectId}`);
 
   }
@@ -183,14 +183,15 @@ class ProjectForm extends React.Component {
               <button onClick={() => this.deleteStep(index)} className= "remove-step-button rounded clickable">x</button>
             </div>
           )
-      );
+      );s
     }
+    console.log(this.props)
 
     // console.log(this.props);
     return (
       <div className="project-form-page" key='5'>
         <div className="project-form-container">
-          <div className='project-form-header'><img></img><buttom>New Project</buttom></div>
+          <div className='project-form-header'><img></img><buttom>{(this.props.formType === 'edit') ? "Edit Project" : "New Project"}</buttom></div>
           <form className="project-form">
             <input type="submit" className="publish-button rounded clickable" onClick={this.handleSubmit} value="Publish" />
             <div className="project-form-project" >
