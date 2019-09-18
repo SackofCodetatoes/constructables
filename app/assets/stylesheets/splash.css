@@ -96,6 +96,7 @@ hr.type2{
   .splash-text{
     font-size: 56px;
   }
+}
 
 @media(min-width: 1090px){
   .splash-text{
